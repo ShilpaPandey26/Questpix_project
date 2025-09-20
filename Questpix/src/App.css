@@ -8,33 +8,25 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   height: 100vh;
   background-color: #0f1825;
-  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: white;
-
 }
 
 .container {
   max-width: 1300px;
   margin: 0 auto;
-
 }
-
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-
 .footmiddle li {
   padding-bottom: 8px;
-
 }
-
-
 
 /* Custom animations */
 @keyframes scroll {
@@ -59,7 +51,6 @@ body {
 .animate-scroll-fast {
   animation: scroll 10s linear infinite;
 }
-
 
 @media (min-width: 1000px) {
   .custom-xl-row {

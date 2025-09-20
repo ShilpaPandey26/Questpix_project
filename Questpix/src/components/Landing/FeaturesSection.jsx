@@ -31,7 +31,7 @@ const features = [
 export default function FeaturesSection() {
   return (
     <div className="mb-0 lg:mb-10 bg-[#0f1825]  text-white ">
-      <h2 className="pb-30 text-4xl font-bold text-center">
+      <h2 className="pb-30 sm:pb-40 text-[38px] font-bold text-center">
         Why Students Choose <span className="text-[#2FC18B]">QuestPix?</span>
       </h2>
 

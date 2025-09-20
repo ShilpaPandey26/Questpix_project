@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function AppDownloadSection() {
   return (
-    <div className="container  custom-xl-row bg-[#0F1825] text-white flex flex-col xl:flex-row items-center justify-evenly">
+    <div className="container lg:h-[400px] lg:pt-10 custom-xl-row bg-[#0F1825]  text-white flex flex-col xl:flex-row items-center justify-evenly">
       {/* Left Content */}
-      <div className=" flex-1 text-center xl:text-left xl:pt-50">
-        <h2 className="text-[45px] xl:text-[55px] xl:w-[60%] font-bold leading-tight pb-3">
+      <div className=" flex-1 text-center xl:text-left ">
+        <h2 className="text-2xl md:text-[54px] xl:w-[60%] font-bold leading-tight pb-3">
           Download the<span className="text-[#2FC18B]"> QuestPix <br /> App</span> Today
         </h2>
         <p className="text-[16px] pb-6">
@@ -32,11 +32,11 @@ export default function AppDownloadSection() {
       </div>
 
       {/* Right Content (Mobile App Images) */}
-      <div className="flex-1 relative  xl:top-45">
+      <div className="flex-1 relative  md:top-20">
         <img
           src="https://dev.questpix.com/assets/images/jee_landing/lastimg.png"
           alt="Phone 1"
-          className="w-[400px] md:w-[400px] xl:w-[400px] mx-auto"
+          className="w-[400px] mx-auto"
         />
       </div>
     </div>

@@ -30,10 +30,14 @@ import SixToTenCareer from "./components/SixToTen/SixToTenCareer"
 import SixToTenFreeMain from "./components/SixToTen/FreeResources/SixToTenFreeMain";
 import SixToTenWhyMain from "./components/SixToTen/WhyUs/SixToTenWhyMain";
 
-// Headers
-import MainHeader from "./components/Header";
+// login
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+
+
+// Headers
+import MainHeader from "./components/Header";
+import HomeHeader from "./components/Home/HomeHeader"
 import JeeHeader from "./components/JEE/JeeHeader";
 import NeetHeader from "./components/Neet/NeetHeader";
 import SixToTenHeader from "./components/SixToTen/SixToTenHeader";
@@ -45,6 +49,7 @@ function App() {
 
   // Decide which header to show
   const renderHeader = () => {
+     if (location.pathname.startsWith("/PartnerWithUs")) return <HomeHeader/>;
     if (location.pathname.startsWith("/Jee")) return <JeeHeader />;
     if (location.pathname.startsWith("/Neet")) return <NeetHeader />;
     if (location.pathname.startsWith("/SixToTen")) return <SixToTenHeader />;

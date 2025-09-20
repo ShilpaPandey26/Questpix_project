@@ -23,8 +23,8 @@ export default function Carousel ()  {
   }, []);
 
   return (
-    <div className="mb-0 lg:mb-20 flex justify-center mt-15 ">
-     <div className="w-[960px] h-[275px] flex flex-col items-center">
+    <div className="mb-14 flex justify-center mt-15 ">
+     <div className="w-[960px] lg:h-[275px] flex flex-col items-center">
 
       <div className="overflow-hidden rounded-3xl relative">
         <div

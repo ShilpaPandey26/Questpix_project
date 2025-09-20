@@ -14,14 +14,14 @@ const features = [
     icon: 'https://dev.questpix.com/assets/images/jee_landing/landingper.png',
     bgColor: 'bg-[#2FC18B]',
     rounded: 'rounded-br-[60px]',
-    lgStyle: { top: '9rem', right: '15%' },
+    lgStyle: { top: '9.5rem', right: '17%' },
   },
   {
     title: 'Instant Photo Click Solutions & Doubt Chat with Teachers',
     icon: 'https://dev.questpix.com/assets/images/jee_landing/landingphoto.png',
     bgColor: 'bg-[#FFD324]',
     rounded: 'rounded-tl-[60px]',
-    lgStyle: { top: '12rem', left: '10%' },
+    lgStyle: { top: '12rem', left: '4%' },
   },
   {
     title: 'Daily Quizzes, Custom Practice & Previous Year Questions',
@@ -29,7 +29,7 @@ const features = [
     bgColor: '',
     gradient: 'linear-gradient(to top, #1e293b 0%, #0F1825 100%)',
     rounded: 'rounded-br-[60px]',
-    lgStyle: { top: '22rem', right: '10%' },
+    lgStyle: { top: '22rem', right: '20%' },
   },
 ];
 
@@ -42,7 +42,7 @@ export default function AppFeatures() {
       </h2>
 
       {/* Mobile stacked layout */}
-      <div className="flex flex-col gap-8 md:hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:hidden">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -64,7 +64,7 @@ export default function AppFeatures() {
       </div>
 
       {/* Desktop absolute layout */}
-      <div className="hidden md:block relative h-[600px] mx-auto">
+      <div className="hidden lg:block relative h-[600px] mx-auto">
         {features.map((feature, index) => (
           <div
             key={index}

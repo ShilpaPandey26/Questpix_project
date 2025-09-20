@@ -61,7 +61,7 @@ export default function Testimonials() {
   useEffect(() => {
     // Update scroll amount based on screen width
     const updateScrollAmount = () => {
-      if (window.innerWidth < 500) setScrollAmount(window.innerWidth - 40); // show one card
+      if (window.innerWidth < 200) setScrollAmount(window.innerWidth - 40); // show one card
       else setScrollAmount(350); // default scroll
     };
 
@@ -102,8 +102,8 @@ export default function Testimonials() {
 
   return (
     <div className="max-w-full lg:max-w-[1250px] mx-auto relative mb-20 px-4 sm:px-6">
-      <h2 className="text-3xl sm:text-4xl lg:text-4xl mb-12 font-bold text-center">
-        <span className="text-[#2FC18B]">Approved </span>By Serious JEE Aspirants.
+      <h2 className="text-3xl sm:text-[38px]  mb-12 font-bold text-center">See What Our
+        <span className="text-[#2FC18B]"> Students  </span> Say
       </h2>
 
       {/* Arrows */}
@@ -149,7 +149,7 @@ function TestCard({ text, name, location, image, isEven }) {
   const shortText = text.slice(0, 100) + (text.length > 100 ? '...' : '');
 
   return (
-    <div className={`p-8 mb-10 min-w-[200px] sm:min-w-[320px] md:min-w-[350px] h-[450px]  sm:h-[350px] md:h-[350px] lg:h-[350px] rounded-xl flex flex-col gap-y-4 text-left ${cardBg}`}>
+    <div className={`p-8 mb-10 min-w-[200px] sm:min-w-[320px]  h-[450px]  sm:h-[350px] md:h-[350px] lg:h-[350px] rounded-xl flex flex-col gap-y-4 text-left ${cardBg}`}>
       {/* Opening comma */}
       <div className="flex items-start gap-2">
         <img src="https://dev.questpix.com/assets/images/icon/testo1.svg" className={`h-7 ${commaColor}`} />
