@@ -63,7 +63,7 @@ export default function FAQSection() {
         onClick={() => setOpenIndex(openIndex === index ? null : index)}
       >
         <div className="flex justify-between items-center">
-          <p className="font-semibold text-[16px] p-[12px]">{faq.question}</p>
+          <p className="font-semibold text-base p-[12px]">{faq.question}</p>
           {openIndex === index ? (
             <ChevronUp className="text-[#2FC18B]" />
           ) : (
@@ -71,14 +71,14 @@ export default function FAQSection() {
           )}
         </div>
         {openIndex === index && faq.answer && (
-          <p className="mt-2 text-[16px] p-[12px]">{faq.answer}</p>
+          <p className="mt-2 text-base p-[12px]">{faq.answer}</p>
         )}
       </div>
     ));
 
   return (
     <div className="container pb-30 text-white pt-30 p-8">
-      <h2 className="text-4xl font-bold text-center mb-20">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
         Answers To Your Most{" "}
         <span className="text-[#2FC18B]">Burning Questions.</span>
       </h2>

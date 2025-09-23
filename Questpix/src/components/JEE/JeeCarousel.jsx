@@ -22,8 +22,8 @@ export default function JeeCarousel () {
   }, []);
 
   return (
-    <div className="mb-25 flex justify-center mt-30">
-     <div className="w-[960px] h-[275px] flex flex-col items-center">
+    <div className="flex justify-center mt-10  sm:mt-20 mb-10">
+     <div className="w-[960px]  lg:h-[275px] flex flex-col items-center">
 
       <div className="overflow-hidden rounded-3xl relative">
         <div

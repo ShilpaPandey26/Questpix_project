@@ -14,7 +14,7 @@ export default function HomeHeader() {
           <img
             src="https://dev.questpix.com/assets/images/logo.svg"
             alt="Questpix Logo"
-            className="h-14 sm:h-16 md:h-20 cursor-pointer object-contain"
+            className="h-14 sm:h-16 md:h-18 cursor-pointer object-contain"
             onClick={() => navigate("/")}
           />
         </div>

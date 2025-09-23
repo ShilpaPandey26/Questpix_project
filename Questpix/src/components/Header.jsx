@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import logo from "../assets/head-logo.svg";
 
 export default function Header() {
   const location = useLocation();
@@ -32,9 +33,9 @@ export default function Header() {
         {/* Logo */}
         <div>
           <img
-            src="https://dev.questpix.com/assets/images/logo.svg"
+            src={logo}
             alt="Questpix Logo"
-            className="h-16 sm:h-16 md:h-20 lg:h-18 cursor-pointer object-contain"
+            className="h-16 sm:h-16  md:h-18 cursor-pointer object-contain"
             onClick={() => navigate("/")}
           />
         </div>

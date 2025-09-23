@@ -12,8 +12,8 @@ import "./App.css";
 import JeeWhoWeare from "./components/JEE/JeeWhoWeare"
 import JeeContactUs from "./components/JEE/JeeContactUs"
 import JeeCareer from "./components/JEE/JeeCareer"
-import FreeMain from "./components/JEE/FreeResources/FreeMain";
-import WhyMain from "./components/JEE/WhyUs/WhyMain";
+import FreeMain from "./components/JEE/FreeResources/FreeMainPage";
+import WhyMain from "./components/JEE/WhyUs/WhyMainPage";
 
 import NeetWhoWeare from "./components/Neet/NeetWhoWeare"
 import NeetContactUs from "./components/Neet/NeetContactUs"

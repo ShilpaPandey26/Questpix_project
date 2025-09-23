@@ -10,13 +10,13 @@ export default function JeeQuestPixSection() {
         <img
           src="http://questpix.com/assets/images/jee_landing/checkout.png" // Replace with your image path
           alt="Person using laptop"
-          className="max-w-sm w-full"
+          className="max-w-[400px] w-full relative top-6"
         />
       </div>
 
       {/* Right Content */}
-      <div className="flex-1">
-        <h2 className="text-4xl font-bold">
+      <div className="flex-1 pt-10 text-center sm:text-left">
+        <h2 className="text-3xl sm:text-4xl font-bold">
           <span className="text-[#2FC18B]">Don't Wait, </span> Start Now.
         </h2>
         <p className="mt-4 text-xl font-bold">
@@ -24,7 +24,7 @@ export default function JeeQuestPixSection() {
         </p>
 
         {/* Features List */}
-        <ul className="mt-6 ">
+        <ul className="mt-6 text-center ">
           {[
             "Self-Designed Practice",
             "Previous Years Questions",

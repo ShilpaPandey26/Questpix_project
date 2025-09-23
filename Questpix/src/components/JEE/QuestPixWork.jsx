@@ -4,7 +4,7 @@ import { FaCheck } from "react-icons/fa";
 
 export default function QuestPixWork() {
   return (
-    <div className="container mx-auto px-4 py-10 space-y-16 pb-10">
+    <div className="container mx-auto px-4 py-10 space-y-16 pb-20">
       <div className="text-center text-4xl font-bold">
         How Does QuestPix <span className="text-[#2FC18B]">Work?</span> 
       </div>
@@ -26,7 +26,7 @@ export default function QuestPixWork() {
                     <FaCheck className="text-[#2b8986] mt-1 flex-shrink-0" />
                     <span className="text-[16px]">
                       <strong>{feature.title}</strong>{" "}
-                      <span className="text-[16px] text-[#9EBDEF]">
+                      <span className="text-[15px] text-[#9EBDEF]">
                         {feature.description}
                       </span>
                     </span>
@@ -37,7 +37,7 @@ export default function QuestPixWork() {
           </div>
 
           {/* Media Section (Image or Video) */}
-          <div className="md:w-1/2 ml-20">
+          <div className="md:w-1/2  flex justify-center mt-6 md:mt-0">
             {item.video ? (
               <video
                 src={item.video}

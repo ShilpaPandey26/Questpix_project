@@ -1,8 +1,17 @@
 import React from "react";
 
+import jee from "../../../assets/jee-images/jee.png";
+import design from "../../../assets/jee-images/design.png";
+import fine from "../../../assets/jee-images/fine.png";
+import master from "../../../assets/jee-images/master.png";
+import practice from "../../../assets/jee-images/practice.png";
+import predict from "../../../assets/jee-images/predict.png";
+import improve from "../../../assets/jee-images/improve.png";
+import win from "../../../assets/jee-images/win.png";
+
 const features = [
   {
-    icon: "https://questpix.com/assets/images/free/jee.png",
+    icon: jee,
     title: "Memorise the Concepts with Interactive Flashcards",
     description:
       "Interactive flashcards offer an engaging way to memorize essential formulas, definitions, and concepts, making learning more enjoyable and facilitating efficient last-minute revision of key information before the exam.",
@@ -12,7 +21,7 @@ const features = [
     desColor: "text-[#9EBDEF]",
   },
   {
-    icon: "https://questpix.com/assets/images/free/design.png",
+    icon: design,
     title: "Design Tests That Suit Your Preparation Level",
     description:
       "The platform allows for highly customizable test creation, enabling users to target specific subjects (PCMB), chapters, and even concepts to address weaknesses and customize practice for JEE & NEET exams.",
@@ -22,7 +31,7 @@ const features = [
     desColor: "text-[#175941]",
   },
   {
-    icon: "https://questpix.com/assets/images/free/fine.png",
+    icon:fine,
     title: "Fine-Tune Your Self-Designed Practice",
     description:
       "Users can fine-tune their practice sessions by controlling time limits, number of questions, and difficulty level to match their preparation and simulate real exam conditions.",
@@ -32,7 +41,7 @@ const features = [
     desColor: "text-[#9EBDEF]",
   },
   {
-    icon: "https://questpix.com/assets/images/free/master.png",
+    icon: master,
     title: "Master All the Concepts with Chapter-wise PYQs",
     description:
       "Practicing chapter-wise past papers allows students to focus on individual concepts, identify recurring themes, and develop strategies to overcome challenges associated with each chapter.",
@@ -42,7 +51,7 @@ const features = [
     desColor: "text-[#175941]",
   },
   {
-    icon: "https://questpix.com/assets/images/free/practise.png",
+    icon: practice,
     title: "Practice for Your Exams with Year-Wise PYQs",
     description:
       "Year-wise PYQ practice helps students analyze trends, understand exam structure, and improve time management by practicing full sets of PYQs within the time limit.",
@@ -52,7 +61,7 @@ const features = [
     desColor: "text-[#175941]",
   },
   {
-    icon: "https://questpix.com/assets/images/free/predict.png",
+    icon: predict,
     title: "Predict Your Rank, Plan Your Strategy",
     description:
       "The platform provides a rank prediction feature, helping students estimate standing, track progress, and develop a personalized, data-driven study plan.",
@@ -62,7 +71,7 @@ const features = [
     desColor: "text-[#9EBDEF]",
   },
   {
-    icon: "https://questpix.com/assets/images/free/improve.png",
+    icon: improve,
     title: "Improve with Detailed Performance Analytics",
     description:
       "Performance analytics gives in-depth analysis of user performance, strengths, weaknesses, and tracks progress over time for data-driven improvements.",
@@ -72,7 +81,7 @@ const features = [
     desColor: "text-[#E8C9FF]",
   },
   {
-    icon: "https://questpix.com/assets/images/free/win.png",
+    icon:win,
     title: "Win Rewards with the Daily Quiz Challenge",
     description:
       "The daily quiz challenge offers 10-question practice sets for PCMB subjects. Users can earn rewards for scoring 90%+ across quizzes.",
@@ -86,7 +95,7 @@ const features = [
 export default function FreeFeaturesGrid() {
   return (
     <div className="container flex flex-col items-center p-6">
-      <p className="text-[38px] font-bold pb-10 text-center">
+      <p className="text-3xl sm:text-[38px] font-bold pb-10 text-center">
         QuestPix Gives You The Edge{" "}
         <span className="text-[#2FC18B]">You Need To Succeed.</span>
       </p>
