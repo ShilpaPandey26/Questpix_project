@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react"; // icons
+import logo from "../../assets/head-logo.svg";
 
 export default function NeetHeader() {
-   
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(null);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(null); // for mobile accordions
 
   const toggleMenu = (menu) => {
     setOpenMenu(openMenu === menu ? null : menu);
   };
 
-  // Close dropdown on outside click
+  // Close dropdown on outside click (desktop only)
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (!e.target.closest(".dropdown")) {
@@ -21,42 +24,38 @@ export default function NeetHeader() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
-
- 
-
   return (
     <div className="w-full fixed top-0 left-0 bg-[#0f1825] z-[1000]">
-      <div className="w-[1300px] mx-auto h-[100px] pt-4 flex justify-between items-center px-4">
-
+      <div className="container mx-auto  px-4 sm:px-10 lg:px-8 py-2 sm:py-4  flex justify-between items-center">
         {/* Logo */}
         <div>
           <img
-            src="https://dev.questpix.com/assets/images/logo.svg"
+            src={logo}
             alt="Questpix Logo"
-            className="h-18 cursor-pointer"
+            className="h-16  sm:h-18 cursor-pointer"
             onClick={() => navigate("/")}
           />
         </div>
 
-        {/* Navigation */}
-        <div className="flex space-x-8 text-white text-[16px] font-semibold relative top-1.5">
-
+        {/* Desktop Navigation */}
+        <div className="hidden  lg:max-w-[600px] xl:max-w-[900px] lg:flex lg:gap-8 xl:gap-10 text-base font-semibold relative ">
           {/* Courses */}
           <div className="relative dropdown">
             <button
               onClick={() => toggleMenu("courses")}
-              className={`hover:text-[#2fc18b] cursor-pointer  ${openMenu === "courses" ? "text-[#2fc18b]" : ""
-                }`}
+              className={`hover:text-[#2fc18b] cursor-pointer ${
+                openMenu === "courses" ? "text-[#2fc18b]" : ""
+              }`}
             >
               Courses
             </button>
             {openMenu === "courses" && (
-              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-6 px-6 w-70 z-50">
-                <ul className="space-y-4 text-[16px]">
-                  <li className="hover:text-[#2fc18b] cursor-pointer">Class XI</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer">Class XII</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer">Class XII+</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer">Crash Course</li>
+              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
+                <ul className="space-y-3 text-[14px] cursor-pointer">
+                  <li>Class XI</li>
+                  <li>Class XII</li>
+                  <li>Class XII+</li>
+                  <li>Crash Course</li>
                 </ul>
               </div>
             )}
@@ -66,42 +65,43 @@ export default function NeetHeader() {
           <div className="relative dropdown">
             <button
               onClick={() => toggleMenu("test-series")}
-              className={`hover:text-[#2fc18b] cursor-pointer ${openMenu === "test-series" ? "text-[#2fc18b]" : ""
-                }`}
+              className={`hover:text-[#2fc18b] cursor-pointer ${
+                openMenu === "test-series" ? "text-[#2fc18b]" : ""
+              }`}
             >
               Test Series
             </button>
             {openMenu === "test-series" && (
-              <div className="absolute top-10 left-0 mt-2  bg-[#1b2b3e] rounded-lg py-6 px-6 w-70 z-50">
-                <ul className="space-y-4 text-[15px]">
-                  <li className="hover:text-[#2fc18b] cursor-pointer">JEE Main Test Series</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer">JEE Advanced Test Series</li>
+              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-60 z-50">
+                <ul className="space-y-3 text-[14px] cursor-pointer">
+                  <li>NEET UG TEST SERIES</li>
                 </ul>
               </div>
             )}
           </div>
 
           {/* Free Resources */}
-          <div>
-            <button onClick={() => navigate("/Neet/FreeResources")} className="cursor-pointer">
-              Free Resources
-            </button>
-          </div>
+          <button
+            onClick={() => navigate("/Neet/FreeResources")}
+            className="cursor-pointer hover:text-[#2fc18b] "
+          >
+            Free Resources
+          </button>
 
           {/* Target Exam */}
           <div className="relative dropdown">
             <button
               onClick={() => toggleMenu("target-exam")}
-              className={`hover:text-[#2fc18b] cursor-pointer ${openMenu === "target-exam" ? "text-[#2fc18b]" : ""
-                }`}
+              className={`hover:text-[#2fc18b] cursor-pointer ${
+                openMenu === "target-exam" ? "text-[#2fc18b]" : ""
+              }`}
             >
               Target Exam
             </button>
             {openMenu === "target-exam" && (
-              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-6 px-6 w-70 z-50">
-                <ul className="space-y-4 text-[15px]">
-                  <li className="hover:text-[#2fc18b] cursor-pointer">JEE Main</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer">JEE Advanced</li>
+              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
+                <ul className="space-y-3 text-[14px] cursor-pointer">
+                  <li>NEET UG</li>
                 </ul>
               </div>
             )}
@@ -111,92 +111,300 @@ export default function NeetHeader() {
           <div className="relative dropdown">
             <button
               onClick={() => toggleMenu("study-material")}
-              className={`hover:text-[#2fc18b] cursor-pointer ${openMenu === "study-material" ? "text-[#2fc18b]" : ""
-                }`}
+              className={`hover:text-[#2fc18b] cursor-pointer ${
+                openMenu === "study-material" ? "text-[#2fc18b]" : ""
+              }`}
             >
               Study Material
             </button>
             {openMenu === "study-material" && (
-              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-6 px-6  w-70 z-50">
-                <ul className="space-y-3 text-[15px]">
-                  <li className="hover:text-[#2fc18b] cursor-pointer" >JEE Main Paper <br/> PDFs (Year-Wise)</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer" >JEE Advanced Paper <br/> PDFs (Year-Wise)</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer" >NCERT Maths Solution <br/> (Class-Wise)</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer" >NCERT Physics Solution <br/> (Class-Wise)</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer" >NCERT Chemistry Solution (Class-Wise)</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer" >NCERT Maths Exemplar Solutions (Class-Wise)</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer" >NCERT Physics Exemplar Solutions (Class-Wise)</li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer" >NCERT Chemistry Exemplar Solutions (Class-Wise)</li>
-
-
+              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-64 z-50">
+                <ul className="space-y-4 text-[14px] cursor-pointer">
+                  <li>NEET UG Paper PDFs(Year-Wise)</li>
+                  <li>NCERT Biology Solution (Class-Wise)</li>
+                  <li>NCERT Physics Solution (Class-Wise)</li>
+                  <li>NCERT Chemistry Solution (Class-Wise)</li>
+                  <li>NCERT Biology Exemplar Solutions (Class-Wise)</li>
+                  <li>NCERT Physics Exemplar Solutions (Class-Wise)</li>
+                  <li>NCERT Chemistry Exemplar Solutions (Class-Wise)</li>
                 </ul>
               </div>
             )}
           </div>
 
           {/* Why Us */}
-          <div>
-            <button onClick={() => navigate("/Neet/WhyDifferent")} className="cursor-pointer">
-              Why Us
-            </button>
-          </div>
+          <button
+            onClick={() => navigate("/Neet/WhyDifferent")}
+            className="cursor-pointer hover:text-[#2fc18b]"
+          >
+            Why Us
+          </button>
 
           {/* About Us */}
           <div className="relative dropdown">
             <button
               onClick={() => toggleMenu("about-us")}
-              className={`hover:text-[#2fc18b] cursor-pointer ${openMenu === "about-us" ? "text-[#2fc18b]" : ""
-                }`}
+              className={`hover:text-[#2fc18b] cursor-pointer ${
+                openMenu === "about-us" ? "text-[#2fc18b]" : ""
+              }`}
             >
               About Us
             </button>
             {openMenu === "about-us" && (
-              <div className="absolute top-full left-0 mt-2 bg-[#1b2b3e] rounded-lg py-6 px-6 w-60 z-50">
-                <div className="space-y-3 text-[14px] cursor-pointer">
-                  <button
-                    onClick={() => {
-                      navigate("/Neet/WhoWeare");
-                      setOpenMenu(null); // close after navigation
-                    }}
-                    className="hover:text-[#2fc18b] cursor-pointer"
-                  >
+              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
+                <ul className="space-y-3 text-[14px] cursor-pointer">
+                  <li onClick={() => navigate("/Neet/WhoWeare")}>
                     Who We Are?
-                  </button>
-                  <br />
-                  <button
-                    onClick={() => {
-                      navigate("/Neet/ContactUs");
-                      setOpenMenu(null); // close after navigation
-                    }}
-                    className="hover:text-[#2fc18b] cursor-pointer"
-                  >
+                  </li>
+                  <li onClick={() => navigate("/Neet/ContactUs")}>
                     Contact Us
-                  </button>
-                  <br />
-                  <button
-                    onClick={() => {
-                      navigate("/Neet/Career");
-                      setOpenMenu(null); // close after navigation
-                    }}
-                    className="hover:text-[#2fc18b] cursor-pointer"
-                  >
-                    Careers
-                  </button>
-                </div>
+                  </li>
+                  <li onClick={() => navigate("/Neet/Career")}>Careers</li>
+                </ul>
               </div>
             )}
           </div>
-
-
         </div>
 
-        {/* Right - Login Button */}
-        <button 
-         onClick={() => navigate("/Auth/signup")}
-        className="bg-[#2dcea1] text-white text-[16px] px-5 py-3 rounded-md cursor-pointer hover:underline">
+        {/* Right - Login Button (hidden on mobile) */}
+        <button
+          onClick={() => navigate("/Auth/signup")}
+          className="hidden lg:block bg-[#2dcea1] text-base px-3 py-2 rounded-md cursor-pointer hover:underline"
+        >
           Login/Sign up
         </button>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden text-white"
+          onClick={() => setMobileMenu(!mobileMenu)}
+        >
+          {mobileMenu ? <X size={32} /> : <Menu size={38} />}
+        </button>
       </div>
+
+      {/* Mobile Navigation */}
+      <MobileView
+        mobileMenu={mobileMenu}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        navigate={navigate}
+      />
     </div>
+  );
+}
+
+function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
+  const toggleMenu = (menu) => {
+    setMobileOpen(mobileOpen === menu ? null : menu);
+  };
+
+  return (
+    <>
+      {mobileMenu && (
+        <div className="lg:hidden bg-[#0f1825] text-white px-4 py-4">
+          <div className="max-w-[360px] mx-auto space-y-3 text-left">
+            {/* Courses */}
+            <div className="bg-[#1b2b3e] rounded-xl shadow-md overflow-hidden">
+              <button
+                onClick={() => toggleMenu("courses")}
+                className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
+              >
+                Courses
+                {mobileOpen === "courses" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
+              </button>
+              <div
+                className={`transition-all duration-300 overflow-hidden ${
+                  mobileOpen === "courses"
+                    ? "max-h-60 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
+                  <li
+                    onClick={() => navigate("/Neet/ClassXI")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    Class XI
+                  </li>
+                  <li
+                    onClick={() => navigate("/Neet/ClassXII")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    Class XII
+                  </li>
+                  <li
+                    onClick={() => navigate("/Neet/ClassXIIPlus")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    Class XII+
+                  </li>
+                  <li
+                    onClick={() => navigate("/Neet/CrashCourse")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    Crash Course
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Test Series */}
+            <div className="bg-[#1b2b3e] rounded-xl shadow-md overflow-hidden">
+              <button
+                onClick={() => toggleMenu("test-series")}
+                className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
+              >
+                Test Series
+                {mobileOpen === "test-series" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
+              </button>
+              <div
+                className={`transition-all duration-300 overflow-hidden ${
+                  mobileOpen === "test-series"
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
+                  <li
+                    onClick={() => navigate("Neet/UGTestSeries")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    NEET UG TEST SERIES
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Free Resources */}
+            <button
+              onClick={() => navigate("/Neet/FreeResources")}
+              className="w-full bg-[#1b2b3e] px-4 py-3 rounded-xl shadow-md text-left hover:text-[#2fc18b]"
+            >
+              Free Resources
+            </button>
+
+            {/* Target Exam */}
+            <div className="bg-[#1b2b3e] rounded-xl shadow-md overflow-hidden">
+              <button
+                onClick={() => toggleMenu("target-exam")}
+                className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
+              >
+                Target Exam
+                {mobileOpen === "target-exam" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
+              </button>
+              <div
+                className={`transition-all duration-300 overflow-hidden ${
+                  mobileOpen === "target-exam"
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
+                  <li
+                    onClick={() => navigate("/Neet/MainExam")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    NEET UG
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Study Material */}
+            <div className="bg-[#1b2b3e] rounded-xl shadow-md overflow-hidden">
+              <button
+                onClick={() => toggleMenu("study-material")}
+                className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
+              >
+                Study Material
+                {mobileOpen === "study-material" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
+              </button>
+              <div
+                className={`transition-all duration-300 overflow-hidden ${
+                  mobileOpen === "study-material"
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
+                  <li>NEET UG Paper PDFs(Year-Wise)</li>
+                  <li>NCERT Biology Solution (Class-Wise)</li>
+                  <li>NCERT Physics Solution (Class-Wise)</li>
+                  <li>NCERT Chemistry Solution (Class-Wise)</li>
+                  <li>NCERT Biology Exemplar Solutions (Class-Wise)</li>
+                  <li>NCERT Physics Exemplar Solutions (Class-Wise)</li>
+                  <li>NCERT Chemistry Exemplar Solutions (Class-Wise)</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Why Us */}
+            <button
+              onClick={() => navigate("/Neet/WhyDifferent")}
+              className="w-full bg-[#1b2b3e] px-4 py-3 rounded-xl text-left shadow-md hover:text-[#2fc18b]"
+            >
+              Why Us
+            </button>
+
+            {/* About Us */}
+            <div className="bg-[#1b2b3e] rounded-xl   shadow-md overflow-hidden">
+              <button
+                onClick={() => toggleMenu("about-us")}
+                className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
+              >
+                About Us
+                {mobileOpen === "about-us" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
+              </button>
+              <div
+                className={`transition-all duration-300 overflow-hidden ${
+                  mobileOpen === "about-us"
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
+                  <li onClick={() => navigate("/Neet/WhoWeare")}>
+                    Who We Are?
+                  </li>
+                  <li onClick={() => navigate("/Neet/ContactUs")}>
+                    Contact Us
+                  </li>
+                  <li onClick={() => navigate("/Neet/Career")}>Careers</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Login */}
+            <button
+              onClick={() => navigate("/Auth/signup")}
+              className="w-full bg-[#2dcea1] text-white px-4 py-3 rounded-xl shadow-md hover:opacity-90"
+            >
+              Login / Sign up
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

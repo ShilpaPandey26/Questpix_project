@@ -1,5 +1,5 @@
-import React, { useEffect, useRef,useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TestData = [
   {
@@ -44,125 +44,122 @@ const TestData = [
     image: "https://dev.questpix.com/assets/images/jee_landing/kanishk.jpg",
     bgColor: "bg-[#1b283d]",
   },
-    {
+  {
     text: "I found it hard to stay motivated during long study hours. The live classes of QuestPix are so good. The teachers are amazing, and",
     name: "Rohan",
     location: "Chennai",
-  image: "https://dev.questpix.com/assets/images/jee_landing/kanishk.jpg",
+    image: "https://dev.questpix.com/assets/images/jee_landing/kanishk.jpg",
     bgColor: "bg-[#2FC18B]",
   },
 ];
 
-
 export default function NeetTestimonials() {
   const scrollRef = useRef(null);
 
- useEffect(() => {
-  const scrollContainer = scrollRef.current;
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
 
-  const scrollAmount = 350; // pixels
-  const intervalTime = 2000; // ms
+    const scrollAmount = 300; // pixels
+    const intervalTime = 1000; // ms
 
-  const scroll = () => {
-    if (!scrollContainer) return;
+    const scroll = () => {
+      if (!scrollContainer) return;
 
-    // If at end, scroll to start
-    if (
-      scrollContainer.scrollLeft + scrollContainer.clientWidth >=
-      scrollContainer.scrollWidth
-    ) {
-      scrollContainer.scrollTo({
-        left: 0,
-        behavior: 'smooth',
-      });
-    } else {
-      scrollContainer.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
+      // If at end, scroll to start
+      if (
+        scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+        scrollContainer.scrollWidth
+      ) {
+        scrollContainer.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        scrollContainer.scrollBy({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    };
 
-  const interval = setInterval(scroll, intervalTime);
+    const interval = setInterval(scroll, intervalTime);
 
-  return () => clearInterval(interval);
-}, []);
-
+    return () => clearInterval(interval);
+  }, []);
 
   const handleScroll = (direction) => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: direction === 'left' ? -350 : 350,
-        behavior: 'smooth',
+        left: direction === "left" ? -350 : 350,
+        behavior: "smooth",
       });
     }
   };
 
   return (
-    <div className=" container relative left-8 pt-30 mb-20">
-      <h2 className="text-[38px] mb-15 font-bold text-center">
-       See What Our <span className="text-[#2FC18B]">Students</span> Say
-      </h2>
+    <div className="container px-4 py-12   flex flex-col  items-center justify-between gap-10">
+      <div className=" w-full  sm:max-w-[1100px] mx-auto relative sm:pt-15">
+        <h2 className="text-xl sm:text-[38px] mb-14 font-bold text-center">
+          See What Our<span className="text-[#2FC18B]"> Students </span> Says
+        </h2>
 
-      {/* Arrows */}
-      <button
-        onClick={() => handleScroll('left')}
-        className="absolute -left-5  top-[430px] transform -translate-y-1/2 -translate-x-full bg-[#0f1825] border-2 border-[#2FC18B] p-2 rounded-full z-[5] h-[48px] w-[48px] cursor-pointer"
-      >
-        <ChevronLeft className="text-white relative left-1" />
-      </button>
+        {/* Arrows */}
+        <button
+          onClick={() => handleScroll("left")}
+          className="absolute -left-5  top-[300px] transform -translate-y-1/2 -translate-x-full bg-[#0f1825] border-2 border-[#2FC18B] p-2 rounded-full z-[5] h-[48px] w-[48px] cursor-pointer"
+        >
+          <ChevronLeft className="text-white relative left-1" />
+        </button>
 
-      <button
-        onClick={() => handleScroll('right')}
-        className="absolute -right-5 top-[430px] transform -translate-y-1/2 translate-x-full bg-[#0f1825] border-2 border-[#2FC18B] p-2 rounded-full z-[5] h-[48px] w-[48px] cursor-pointer"
-      >
-        <ChevronRight className="text-white relative -right-1 " />
-      </button>
+        <button
+          onClick={() => handleScroll("right")}
+          className="absolute -right-5 top-[300px] transform -translate-y-1/2 translate-x-full bg-[#0f1825] border-2 border-[#2FC18B] p-2 rounded-full z-[5] h-[48px] w-[48px] cursor-pointer"
+        >
+          <ChevronRight className="text-white relative -right-1 " />
+        </button>
 
-      {/* Scrollable Cards */}
-      <div
-        ref={scrollRef}
-        className="flex gap-6   overflow-x-auto no-scrollbar scroll-smooth"
-      >
-        {TestData.map((data, index) => {
-          const isEven = index % 2 === 1;
+        {/* Scrollable Cards */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6   overflow-x-auto no-scrollbar scroll-smooth"
+        >
+          {TestData.map((data, index) => {
+            const isEven = index % 2 === 1;
 
-          return (
-            <TestCard
-              key={index}
-              {...data}
-              isEven={isEven}
-            />
-          );
-        })}
+            return <TestCard key={index} {...data} isEven={isEven} />;
+          })}
+        </div>
       </div>
     </div>
   );
 }
 
-
-
 function TestCard({ text, name, location, image, isEven }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const cardBg = isEven ? 'bg-[#1b283d]' : 'bg-[#2fc18b]'
-  const textColor = isEven ? 'text-white' : 'text-black';
-  const readMoreColor = isEven ? 'text-[#2fc18b]' : 'text-white';
-  const commaColor = isEven ? 'invert' : '';
-  const nameColor = isEven ? 'text-white' : 'text-black';
+  const cardBg = isEven ? "bg-[#1b283d]" : "bg-[#2fc18b]";
+  const textColor = isEven ? "text-white" : "text-black";
+  const readMoreColor = isEven ? "text-[#2fc18b]" : "text-white";
+  const commaColor = isEven ? "invert" : "";
+  const nameColor = isEven ? "text-white" : "text-black";
 
   const toggleReadMore = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const shortText = text.slice(0, 100) + (text.length > 100 ? '...' : '');
+  const shortText = text.slice(0, 100) + (text.length > 100 ? "..." : "");
 
   return (
-    <div className={`p-8 mb-10  min-w-[350px] h-[350px] rounded-xl flex flex-col gap-y-4 text-left ${cardBg}`}>
+    <div
+      className={`p-8 mb-10  min-w-[300px] h-[300px] rounded-xl flex flex-col text-left ${cardBg}`}
+    >
       {/* Opening comma */}
-       <div className="flex items-start gap-2">
-      <img src="https://dev.questpix.com/assets/images/icon/testo1.svg" className={`h-7 ${commaColor}`} />
-</div>
+      <div className="flex items-start gap-2">
+        <img
+          src="https://dev.questpix.com/assets/images/icon/testo1.svg"
+          className={`h-7 ${commaColor}`}
+        />
+      </div>
       {/* Testimonial Text */}
       <p className={`mb-4 leading-relaxed ${textColor}`}>
         {isExpanded ? text : shortText}
@@ -171,15 +168,18 @@ function TestCard({ text, name, location, image, isEven }) {
             className={`cursor-pointer font-semibold ml-1 ${readMoreColor}`}
             onClick={toggleReadMore}
           >
-            {isExpanded ? ' Read Less...' : ' Read More...'}
+            {isExpanded ? " Read Less..." : " Read More..."}
           </span>
         )}
       </p>
 
       {/* Closing comma */}
-       <div className="flex justify-end">
-      <img src="https://dev.questpix.com/assets/images/icon/testo2.svg" className={`h-7 ${commaColor}`} />
-</div>
+      <div className="flex justify-end">
+        <img
+          src="https://dev.questpix.com/assets/images/icon/testo2.svg"
+          className={`h-7 ${commaColor}`}
+        />
+      </div>
       {/* User Info */}
       <div className="flex items-center gap-3 ">
         <img
@@ -195,4 +195,3 @@ function TestCard({ text, name, location, image, isEven }) {
     </div>
   );
 }
-

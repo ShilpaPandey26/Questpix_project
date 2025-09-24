@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Img1 from '../../assets/Neet_Carousel_1.jpg';
-import Img2 from '../../assets/Neet_Carousel_2.jpg';
+import Img1 from '../../assets/neet-images/Neet_Carousel_1.jpg';
+import Img2 from '../../assets/neet-images/Neet_Carousel_2.jpg';
 
 
 // Array of images
@@ -21,8 +21,8 @@ export default function NeetCarousel () {
   }, []);
 
   return (
-    <div className="mb-25 flex justify-center mt-30">
-     <div className="w-[960px] h-[275px] flex flex-col items-center">
+    <div className="flex justify-center mt-10  sm:mt-20 mb-10">
+     <div className="w-[960px]  lg:h-[275px] flex flex-col items-center">
 
       <div className="overflow-hidden rounded-3xl relative">
         <div

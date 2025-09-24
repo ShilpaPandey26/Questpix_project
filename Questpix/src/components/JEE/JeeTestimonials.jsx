@@ -1,5 +1,5 @@
-import React, { useEffect, useRef,useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TestData = [
   {
@@ -44,11 +44,11 @@ const TestData = [
     image: "https://dev.questpix.com/assets/images/jee_landing/kanishk.jpg",
     bgColor: "bg-[#1b283d]",
   },
-    {
+  {
     text: "I found it hard to stay motivated during long study hours. The live classes of QuestPix are so good. The teachers are amazing, and",
     name: "Rohan",
     location: "Chennai",
-  image: "https://dev.questpix.com/assets/images/jee_landing/kanishk.jpg",
+    image: "https://dev.questpix.com/assets/images/jee_landing/kanishk.jpg",
     bgColor: "bg-[#2FC18B]",
   },
 ];
@@ -97,43 +97,40 @@ export default function JeeTestimonials() {
   };
 
   return (
-    
-      <div className="container px-4 py-12   flex flex-col  items-center justify-between gap-10">
-        <div className=" w-full  sm:max-w-[1100px] mx-auto relative sm:pt-15">
-          <h2 className="text-xl sm:text-[38px] mb-14 font-bold text-center">
+    <div className="container px-4 py-12   flex flex-col  items-center justify-between gap-10">
+      <div className=" w-full  sm:max-w-[1100px] mx-auto relative sm:pt-15">
+        <h2 className="text-xl sm:text-[38px] mb-14 font-bold text-center">
           See What Our<span className="text-[#2FC18B]"> Students </span> Says
-            
-          </h2>
+        </h2>
 
-          {/* Arrows */}
-          <button
-            onClick={() => handleScroll("left")}
-            className="absolute -left-5  top-[300px] transform -translate-y-1/2 -translate-x-full bg-[#0f1825] border-2 border-[#2FC18B] p-2 rounded-full z-[5] h-[48px] w-[48px] cursor-pointer"
-          >
-            <ChevronLeft className="text-white relative left-1" />
-          </button>
+        {/* Arrows */}
+        <button
+          onClick={() => handleScroll("left")}
+          className="absolute -left-5  top-[300px] transform -translate-y-1/2 -translate-x-full bg-[#0f1825] border-2 border-[#2FC18B] p-2 rounded-full z-[5] h-[48px] w-[48px] cursor-pointer"
+        >
+          <ChevronLeft className="text-white relative left-1" />
+        </button>
 
-          <button
-            onClick={() => handleScroll("right")}
-            className="absolute -right-5 top-[300px] transform -translate-y-1/2 translate-x-full bg-[#0f1825] border-2 border-[#2FC18B] p-2 rounded-full z-[5] h-[48px] w-[48px] cursor-pointer"
-          >
-            <ChevronRight className="text-white relative -right-1 " />
-          </button>
+        <button
+          onClick={() => handleScroll("right")}
+          className="absolute -right-5 top-[300px] transform -translate-y-1/2 translate-x-full bg-[#0f1825] border-2 border-[#2FC18B] p-2 rounded-full z-[5] h-[48px] w-[48px] cursor-pointer"
+        >
+          <ChevronRight className="text-white relative -right-1 " />
+        </button>
 
-          {/* Scrollable Cards */}
-          <div
-            ref={scrollRef}
-            className="flex gap-6   overflow-x-auto no-scrollbar scroll-smooth"
-          >
-            {TestData.map((data, index) => {
-              const isEven = index % 2 === 1;
+        {/* Scrollable Cards */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6   overflow-x-auto no-scrollbar scroll-smooth"
+        >
+          {TestData.map((data, index) => {
+            const isEven = index % 2 === 1;
 
-              return <TestCard key={index} {...data} isEven={isEven} />;
-            })}
-          </div>
+            return <TestCard key={index} {...data} isEven={isEven} />;
+          })}
         </div>
       </div>
-    
+    </div>
   );
 }
 

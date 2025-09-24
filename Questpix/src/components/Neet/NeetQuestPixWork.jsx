@@ -15,7 +15,7 @@ export default function NeetQuestPixWork() {
             }`}
         >
           {/* Text Section */}
-          <div className="w-[60%] text-center md:text-left space-y-4">
+          <div className="md:w-1/2 text-center md:text-left space-y-4">
             <h2 className="text-2xl font-bold">{item.title}</h2>
 
             {/* Features list (if present) */}
@@ -26,7 +26,7 @@ export default function NeetQuestPixWork() {
                     <FaCheck className="text-[#2b8986] mt-1 flex-shrink-0" />
                     <span className="text-[16px]">
                       <strong>{feature.title}</strong>{" "}
-                      <span className="text-[16px] text-[#9EBDEF]">
+                      <span className="text-[15px] text-[#9EBDEF]">
                         {feature.description}
                       </span>
                     </span>
@@ -37,7 +37,7 @@ export default function NeetQuestPixWork() {
           </div>
 
           {/* Media Section (Image or Video) */}
-          <div className="w-[40%] ml-10">
+          <div className="md:w-1/2  flex justify-center mt-6 md:mt-0">
             {item.video ? (
               <video
                 src={item.video}

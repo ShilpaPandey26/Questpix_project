@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Img1 from '../../assets/Jee_Carousel_1.jpg';
-import Img2 from '../../assets/Jee_Carousel_2.jpg';
-import Img3 from '../../assets/Jee_Carousel_3.jpg';
+import Img1 from '../../assets/jee-images/Jee_Carousel_1.jpg';
+import Img2 from '../../assets/jee-images/Jee_Carousel_2.jpg';
+import Img3 from '../../assets/jee-images/Jee_Carousel_3.jpg';
 
 
 // Array of images

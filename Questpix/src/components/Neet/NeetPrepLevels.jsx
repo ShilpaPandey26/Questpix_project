@@ -45,37 +45,42 @@ export default function NeetPrepLevels() {
   ];
 
   return (
-    <div
-      className="py-12 px-4 mt-50 bg-no-repeat bg-center bg-contain"
-      style={{ backgroundImage: `url('https://questpix.com/assets/images/jee_landing/step.png')` }}
-    >
-      <h2 className="text-center text-4xl font-bold text-white relative -top-40">
-        Take Your NEET Prep To The <span className="text-green-400">Next Level.</span>
+    <div className="max-w-[1100px] mx-auto pt-14 md:mb-10 px-4">
+      <h2 className="text-center text-3xl sm:text-4xl font-bold text-white pb-10">
+        Take Your NEET Prep To The{" "}
+        <span className="text-[#2FC18B]">Next Level.</span>
       </h2>
 
-      <div className="mt-12 flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl mx-auto ">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between  gap-10 md:gap-0 p-4 lg:w-6xl">
         {/* Left Side */}
-        <div className="flex-1 flex flex-col gap-20">
+        <div className="flex-1 flex flex-col gap-12 mb-32 mb:sm-0 lg:gap-20">
           {items
             .filter((item) => item.side === "left")
             .map((item, i) => (
-              <div key={i} className="text-right  relative -left-30  -top-20">
+              <div key={i}>
                 <h3
-                  className={`text-xl font-semibold  text-white border-b-2 inline-block mb-2 ${item.border}`}
+                  className={`text-xl font-semibold text-white border-b-2 inline-block mb-2 ${item.border}`}
                 >
                   {item.title}
                 </h3>
-                <p className="text-[#9EBDEF] text-sm max-w-xs ml-auto">
+                <p className="text-[#9EBDEF] text-sm sm:text-base">
                   {item.description}
                 </p>
               </div>
             ))}
         </div>
 
-       
+        {/* Image Column */}
+        <div className="md:flex justify-center flex-1 my-4 sm:my-0 hidden">
+          <img
+            src="https://questpix.com/assets/images/jee_landing/step.png"
+            alt="JEE Steps"
+            className="w-48 object-contain"
+          />
+        </div>
 
         {/* Right Side */}
-        <div className="flex-1 flex flex-col gap-35 relative -top-15 left-40">
+        <div className="flex-1 flex flex-col gap-12 lg:gap-20 relative -top-20">
           {items
             .filter((item) => item.side === "right")
             .map((item, i) => (
@@ -85,7 +90,9 @@ export default function NeetPrepLevels() {
                 >
                   {item.title}
                 </h3>
-                <p className="text-[#9EBDEF] text-sm max-w-xs">{item.description}</p>
+                <p className="text-[#9EBDEF] text-sm sm:text-base">
+                  {item.description}
+                </p>
               </div>
             ))}
         </div>

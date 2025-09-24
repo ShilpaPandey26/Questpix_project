@@ -1,58 +1,67 @@
-import React from 'react';
+import React from "react";
 import { FaStar } from "react-icons/fa";
+import gpbtn from "../../../assets/gpbtn.png";
+import appstore from "../../../assets/appstore.png";
+import success from "../../../assets/jee-images/success.png";
 
 export default function NeetFreeResources() {
-
   return (
-    <div className="container mx-auto pt-25  pb-30 flex justify-center">
-      {/* Left Side */}
-      <div className=" md:w-[50%]  pt-30 ml-10">
-        <p className="text-[38px] w-[80%] font-bold pb-5">Your <span className="text-[#2FC18B]">Academic Success</span> Starts Here,
-          <br /> <span className="border-3 border-yellow-300 rounded-[80%] text-[28px] p-2">FREE</span> with QuestPix.</p>
+    <div className="container px-4 sm:px-10 lg:px-8 py-3 sm:py-6">
+      <div className=" flex flex-col md:flex-row   justify-center mb-14 ">
+        {/* Left Side */}
+        <div className="w-full md:w-[45%] text-center md:text-left pt-30">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-bold pb-5 leading-snug">
+            Your <span className="text-[#2FC18B]">Academic Success</span> Starts
+            Here,
+            <br />{" "}
+            <span className="border-3 border-yellow-300 rounded-[80%] text-[28px] p-2">
+              FREE
+            </span>{" "}
+            with QuestPix.
+          </p>
 
-        <p className="text-[#9EBDEF] text-[16px] pb-8  w-[70%]">
-          Master concepts, practice with PYQs, customize tests, and
-          predict your rank – all for FREE!
-        </p>
+          <p className="text-[#9EBDEF] text-base pb-5">
+            Master concepts, practice with PYQs, customize tests, and predict
+            your rank – all for FREE!
+          </p>
 
+          {/* Store Buttons */}
 
-        {/* Store Buttons */}
+          <div className="flex justify-center md:justify-start items-center gap-5 ">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.questpix.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={gpbtn} alt="Google Play" className="w-32 sm:w-40" />
+            </a>
+            <a
+              href="https://apps.apple.com/in/app/questpix/id6742243591"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={appstore} alt="App Store" className="w-32 sm:w-40" />
+            </a>
+          </div>
 
-        <div className="flex items-center gap-5 pb-3">
-          <a href="#" target="_blank">
-            <img
-              src="https://dev.questpix.com/assets/images/icon/gpbtn.png"
-              alt="Google Play"
-              className="w-40"
-            />
-          </a>
-          <a href="#" target="_blank">
-            <img
-              src="https://dev.questpix.com/assets/images/icon/appstore.png"
-              alt="App Store"
-              className="w-40"
-            />
-          </a>
+          {/* Rating */}
+          <div className="flex items-center justify-center md:justify-start space-x-1 mt-3">
+            <p className="text-[#9EBDEF]">Rated:</p>
+            {[...Array(5)].map((_, i) => (
+              <FaStar key={i} className="text-yellow-400" />
+            ))}
+          </div>
         </div>
 
+        {/* Right Side */}
 
-        {/* Rating */}
-        <div className="flex items-center space-x-1 mt-3">
-          <p className="text-[#9EBDEF]">Rated:</p>
-          {[...Array(5)].map((_, i) => (
-            <FaStar key={i} className="text-yellow-400" />
-          ))}
+        <div className="w-full md:w-1/2 flex justify-center md:pt-5">
+          <img
+            src={success}
+            alt="Thumbnail"
+            className="max-w-md lg:max-w-lg object-contain rounded-2xl mr-20 md:mr-0"
+          />
         </div>
-      </div>
-
-      {/* Right Side */}
-
-      <div className="w-[50%] cursor-pointer">
-        <img
-          src="https://questpix.com/assets/images/free/success.png"
-          alt="Thumbnail"
-          className="w-[600px] h-[500px] object-contain rounded-2xl "
-        />
       </div>
     </div>
   );

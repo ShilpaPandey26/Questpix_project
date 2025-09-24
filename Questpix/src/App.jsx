@@ -8,25 +8,23 @@ import NeetPage from "./components/Neet/NeetPage";
 import Footer from "./components/Footer";
 import "./App.css";
 
-
-import JeeWhoWeare from "./components/JEE/JeeWhoWeare"
-import JeeContactUs from "./components/JEE/JeeContactUs"
-import JeeCareer from "./components/JEE/JeeCareer"
+import JeeWhoWeare from "./components/JEE/JeeWhoWeare";
+import JeeContactUs from "./components/JEE/JeeContactUs";
+import JeeCareer from "./components/JEE/JeeCareer";
 import FreeMain from "./components/JEE/FreeResources/FreeMainPage";
 import WhyMain from "./components/JEE/WhyUs/WhyMainPage";
 
-import NeetWhoWeare from "./components/Neet/NeetWhoWeare"
-import NeetContactUs from "./components/Neet/NeetContactUs"
-import NeetCareer from "./components/Neet/NeetCareer"
-import NeetFreeMain from "./components/Neet/FreeResources/NeetFreeMain";
-import NeetWhyMain from "./components/Neet/WhyUs/NeetWhyMain";
-
+import NeetWhoWeare from "./components/Neet/NeetWhoWeare";
+import NeetContactUs from "./components/Neet/NeetContactUs";
+import NeetCareer from "./components/Neet/NeetCareer";
+import NeetFreeMain from "./components/Neet/FreeResources/NeetFreeMainPage";
+import NeetWhyMain from "./components/Neet/WhyUs/NeetWhyMainPage";
 
 import SixToTenPage from "./components/SixToTen/SixToTenPage";
 
-import SixToTenWhoWeare from "./components/SixToTen/SixToTenWhoWeare"
-import SixToTenContactUs from "./components/SixToTen/SixToTenContactUs"
-import SixToTenCareer from "./components/SixToTen/SixToTenCareer"
+import SixToTenWhoWeare from "./components/SixToTen/SixToTenWhoWeare";
+import SixToTenContactUs from "./components/SixToTen/SixToTenContactUs";
+import SixToTenCareer from "./components/SixToTen/SixToTenCareer";
 import SixToTenFreeMain from "./components/SixToTen/FreeResources/SixToTenFreeMain";
 import SixToTenWhyMain from "./components/SixToTen/WhyUs/SixToTenWhyMain";
 
@@ -34,22 +32,19 @@ import SixToTenWhyMain from "./components/SixToTen/WhyUs/SixToTenWhyMain";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 
-
 // Headers
 import MainHeader from "./components/Header";
-import HomeHeader from "./components/Home/HomeHeader"
+import HomeHeader from "./components/Home/HomeHeader";
 import JeeHeader from "./components/JEE/JeeHeader";
 import NeetHeader from "./components/Neet/NeetHeader";
 import SixToTenHeader from "./components/SixToTen/SixToTenHeader";
-
-
 
 function App() {
   const location = useLocation();
 
   // Decide which header to show
   const renderHeader = () => {
-     if (location.pathname.startsWith("/PartnerWithUs")) return <HomeHeader/>;
+    if (location.pathname.startsWith("/PartnerWithUs")) return <HomeHeader />;
     if (location.pathname.startsWith("/Jee")) return <JeeHeader />;
     if (location.pathname.startsWith("/Neet")) return <NeetHeader />;
     if (location.pathname.startsWith("/SixToTen")) return <SixToTenHeader />;
@@ -80,7 +75,6 @@ function App() {
         <Route path="/Jee/ContactUs" element={<JeeContactUs />} />
         <Route path="/Jee/Career" element={<JeeCareer />} />
 
-
         <Route path="/Neet" element={<NeetPage />} />
         <Route path="/Neet/FreeResources" element={<NeetFreeMain />} />
         <Route path="/Neet/WhyDifferent" element={<NeetWhyMain />} />
@@ -94,7 +88,6 @@ function App() {
         <Route path="/SixToTen/WhoWeare" element={<SixToTenWhoWeare />} />
         <Route path="/SixToTen/ContactUs" element={<SixToTenContactUs />} />
         <Route path="/SixToTen/Career" element={<SixToTenCareer />} />
-
       </Routes>
 
       {showFooter && <Footer />}

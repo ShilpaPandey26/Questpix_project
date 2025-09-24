@@ -2,14 +2,38 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const features = [
-  { title: "Personalised Practice", icon: "https://questpix.com/assets/images/jee_landing/dash1.svg" },
-  { title: "JEE Test Series", icon: "https://questpix.com/assets/images/jee_landing/dash2.svg" },
-  { title: "Past Year Papers", icon: "https://questpix.com/assets/images/jee_landing/dash3.svg" },
-  { title: "My Virtual Classroom", icon: "https://questpix.com/assets/images/jee_landing/dash4.svg" },
-  { title: "Live Classes", icon: "https://questpix.com/assets/images/jee_landing/dash5.svg" },
-  { title: "Flash Cards", icon: "https://questpix.com/assets/images/jee_landing/dash6.svg" },
-  { title: "Top 500 AIR Club", icon: "https://questpix.com/assets/images/jee_landing/dash7.svg" },
-  { title: "Daily Quiz Challenge", icon: "https://questpix.com/assets/images/jee_landing/dash8.svg" },
+  {
+    title: "Personalised Practice",
+    icon: "https://questpix.com/assets/images/jee_landing/dash1.svg",
+  },
+  {
+    title: "JEE Test Series",
+    icon: "https://questpix.com/assets/images/jee_landing/dash2.svg",
+  },
+  {
+    title: "Past Year Papers",
+    icon: "https://questpix.com/assets/images/jee_landing/dash3.svg",
+  },
+  {
+    title: "My Virtual Classroom",
+    icon: "https://questpix.com/assets/images/jee_landing/dash4.svg",
+  },
+  {
+    title: "Live Classes",
+    icon: "https://questpix.com/assets/images/jee_landing/dash5.svg",
+  },
+  {
+    title: "Flash Cards",
+    icon: "https://questpix.com/assets/images/jee_landing/dash6.svg",
+  },
+  {
+    title: "Top 500 AIR Club",
+    icon: "https://questpix.com/assets/images/jee_landing/dash7.svg",
+  },
+  {
+    title: "Daily Quiz Challenge",
+    icon: "https://questpix.com/assets/images/jee_landing/dash8.svg",
+  },
 ];
 
 export default function FeatureGrid() {
