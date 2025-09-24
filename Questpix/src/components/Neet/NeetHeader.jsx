@@ -23,6 +23,13 @@ export default function NeetHeader() {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+  // Close menus helper
+  const handleNavigate = (path) => {
+    navigate(path);
+    setOpenMenu(null); // close desktop dropdown
+    setMobileMenu(false); // close mobile menu
+    setMobileOpen(null); // close mobile accordion
+  };
 
   return (
     <div className="w-full fixed top-0 left-0 bg-[#0f1825] z-[1000]">
@@ -33,7 +40,7 @@ export default function NeetHeader() {
             src={logo}
             alt="Questpix Logo"
             className="h-16  sm:h-18 cursor-pointer"
-            onClick={() => navigate("/")}
+            onClick={() => handleNavigate("/")}
           />
         </div>
 
@@ -52,10 +59,18 @@ export default function NeetHeader() {
             {openMenu === "courses" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li>Class XI</li>
-                  <li>Class XII</li>
-                  <li>Class XII+</li>
-                  <li>Crash Course</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    Class XI
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    Class XII
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    Class XII+
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    Crash Course
+                  </li>
                 </ul>
               </div>
             )}
@@ -74,7 +89,9 @@ export default function NeetHeader() {
             {openMenu === "test-series" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-60 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li>NEET UG TEST SERIES</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NEET UG TEST SERIES
+                  </li>
                 </ul>
               </div>
             )}
@@ -82,7 +99,7 @@ export default function NeetHeader() {
 
           {/* Free Resources */}
           <button
-            onClick={() => navigate("/Neet/FreeResources")}
+            onClick={() => handleNavigate("/Neet/FreeResources")}
             className="cursor-pointer hover:text-[#2fc18b] "
           >
             Free Resources
@@ -101,7 +118,9 @@ export default function NeetHeader() {
             {openMenu === "target-exam" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li>NEET UG</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NEET UG
+                  </li>
                 </ul>
               </div>
             )}
@@ -120,13 +139,27 @@ export default function NeetHeader() {
             {openMenu === "study-material" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-64 z-50">
                 <ul className="space-y-4 text-[14px] cursor-pointer">
-                  <li>NEET UG Paper PDFs(Year-Wise)</li>
-                  <li>NCERT Biology Solution (Class-Wise)</li>
-                  <li>NCERT Physics Solution (Class-Wise)</li>
-                  <li>NCERT Chemistry Solution (Class-Wise)</li>
-                  <li>NCERT Biology Exemplar Solutions (Class-Wise)</li>
-                  <li>NCERT Physics Exemplar Solutions (Class-Wise)</li>
-                  <li>NCERT Chemistry Exemplar Solutions (Class-Wise)</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NEET UG Paper PDFs(Year-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Biology Solution (Class-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Physics Solution (Class-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Chemistry Solution (Class-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Biology Exemplar Solutions (Class-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Physics Exemplar Solutions (Class-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Chemistry Exemplar Solutions (Class-Wise)
+                  </li>
                 </ul>
               </div>
             )}
@@ -134,7 +167,7 @@ export default function NeetHeader() {
 
           {/* Why Us */}
           <button
-            onClick={() => navigate("/Neet/WhyDifferent")}
+            onClick={() => handleNavigate("/Neet/WhyDifferent")}
             className="cursor-pointer hover:text-[#2fc18b]"
           >
             Why Us
@@ -153,13 +186,24 @@ export default function NeetHeader() {
             {openMenu === "about-us" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li onClick={() => navigate("/Neet/WhoWeare")}>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Neet/WhoWeare")}
+                  >
                     Who We Are?
                   </li>
-                  <li onClick={() => navigate("/Neet/ContactUs")}>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Neet/ContactUs")}
+                  >
                     Contact Us
                   </li>
-                  <li onClick={() => navigate("/Neet/Career")}>Careers</li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Neet/Career")}
+                  >
+                    Careers
+                  </li>
                 </ul>
               </div>
             )}
@@ -168,7 +212,7 @@ export default function NeetHeader() {
 
         {/* Right - Login Button (hidden on mobile) */}
         <button
-          onClick={() => navigate("/Auth/signup")}
+          onClick={() => handleNavigate("/Auth/signup")}
           className="hidden lg:block bg-[#2dcea1] text-base px-3 py-2 rounded-md cursor-pointer hover:underline"
         >
           Login/Sign up
@@ -188,13 +232,13 @@ export default function NeetHeader() {
         mobileMenu={mobileMenu}
         mobileOpen={mobileOpen}
         setMobileOpen={setMobileOpen}
-        navigate={navigate}
+        handleNavigate={handleNavigate}
       />
     </div>
   );
 }
 
-function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
+function MobileView({ mobileMenu, mobileOpen, setMobileOpen, handleNavigate }) {
   const toggleMenu = (menu) => {
     setMobileOpen(mobileOpen === menu ? null : menu);
   };
@@ -226,25 +270,25 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
                   <li
-                    onClick={() => navigate("/Neet/ClassXI")}
+                    onClick={() => handleNavigate("/Neet/ClassXI")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     Class XI
                   </li>
                   <li
-                    onClick={() => navigate("/Neet/ClassXII")}
+                    onClick={() => handleNavigate("/Neet/ClassXII")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     Class XII
                   </li>
                   <li
-                    onClick={() => navigate("/Neet/ClassXIIPlus")}
+                    onClick={() => handleNavigate("/Neet/ClassXIIPlus")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     Class XII+
                   </li>
                   <li
-                    onClick={() => navigate("/Neet/CrashCourse")}
+                    onClick={() => handleNavigate("/Neet/CrashCourse")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     Crash Course
@@ -275,7 +319,7 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
                   <li
-                    onClick={() => navigate("Neet/UGTestSeries")}
+                    onClick={() => handleNavigate("Neet/UGTestSeries")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     NEET UG TEST SERIES
@@ -286,7 +330,7 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
 
             {/* Free Resources */}
             <button
-              onClick={() => navigate("/Neet/FreeResources")}
+              onClick={() => handleNavigate("/Neet/FreeResources")}
               className="w-full bg-[#1b2b3e] px-4 py-3 rounded-xl shadow-md text-left hover:text-[#2fc18b]"
             >
               Free Resources
@@ -314,7 +358,7 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
                   <li
-                    onClick={() => navigate("/Neet/MainExam")}
+                    onClick={() => handleNavigate("/Neet/MainExam")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     NEET UG
@@ -344,20 +388,32 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
                 }`}
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
-                  <li>NEET UG Paper PDFs(Year-Wise)</li>
-                  <li>NCERT Biology Solution (Class-Wise)</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NEET UG Paper PDFs(Year-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Biology Solution (Class-Wise)
+                  </li>
                   <li>NCERT Physics Solution (Class-Wise)</li>
-                  <li>NCERT Chemistry Solution (Class-Wise)</li>
-                  <li>NCERT Biology Exemplar Solutions (Class-Wise)</li>
-                  <li>NCERT Physics Exemplar Solutions (Class-Wise)</li>
-                  <li>NCERT Chemistry Exemplar Solutions (Class-Wise)</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Chemistry Solution (Class-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Biology Exemplar Solutions (Class-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Physics Exemplar Solutions (Class-Wise)
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Chemistry Exemplar Solutions (Class-Wise)
+                  </li>
                 </ul>
               </div>
             </div>
 
             {/* Why Us */}
             <button
-              onClick={() => navigate("/Neet/WhyDifferent")}
+              onClick={() => handleNavigate("/Neet/WhyDifferent")}
               className="w-full bg-[#1b2b3e] px-4 py-3 rounded-xl text-left shadow-md hover:text-[#2fc18b]"
             >
               Why Us
@@ -384,20 +440,31 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
                 }`}
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
-                  <li onClick={() => navigate("/Neet/WhoWeare")}>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Neet/WhoWeare")}
+                  >
                     Who We Are?
                   </li>
-                  <li onClick={() => navigate("/Neet/ContactUs")}>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Neet/ContactUs")}
+                  >
                     Contact Us
                   </li>
-                  <li onClick={() => navigate("/Neet/Career")}>Careers</li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Neet/Career")}
+                  >
+                    Careers
+                  </li>
                 </ul>
               </div>
             </div>
 
             {/* Login */}
             <button
-              onClick={() => navigate("/Auth/signup")}
+              onClick={() => handleNavigate("/Auth/signup")}
               className="w-full bg-[#2dcea1] text-white px-4 py-3 rounded-xl shadow-md hover:opacity-90"
             >
               Login / Sign up

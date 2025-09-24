@@ -21,12 +21,11 @@ import NeetFreeMain from "./components/Neet/FreeResources/NeetFreeMainPage";
 import NeetWhyMain from "./components/Neet/WhyUs/NeetWhyMainPage";
 
 import SixToTenPage from "./components/SixToTen/SixToTenPage";
-
 import SixToTenWhoWeare from "./components/SixToTen/SixToTenWhoWeare";
 import SixToTenContactUs from "./components/SixToTen/SixToTenContactUs";
 import SixToTenCareer from "./components/SixToTen/SixToTenCareer";
-import SixToTenFreeMain from "./components/SixToTen/FreeResources/SixToTenFreeMain";
-import SixToTenWhyMain from "./components/SixToTen/WhyUs/SixToTenWhyMain";
+import SixToTenFreeMain from "./components/SixToTen/FreeResources/SixToTenFreeMainPage";
+import SixToTenWhyMain from "./components/SixToTen/WhyUs/SixToTenWhyMainPage";
 
 // login
 import Login from "./components/Login";

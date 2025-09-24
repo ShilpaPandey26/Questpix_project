@@ -60,97 +60,152 @@ const values = [
 
 export default function SixToTenWhoWeare() {
   return (
-    <div className="container pt-40">
-      {/* 1 */}
-      <div className="text-center">
-        <h2 className="text-5xl font-bold mb-8">Your Academic Dreams, <span className="text-[#2FC18B]">Our Priority.</span></h2>
-        <p className="text-[16px] text-[#9EBDEF] mb-10">QuestPix was born from a simple yet powerful belief: every student deserves the opportunity to achieve their JEE, NEET or other academic dreams.</p>
-        <p className="text-[16px] text-[#9EBDEF] mb-30">We are a team of passionate faculties, technologists, and innovators, led by the very best Vijay Sharma Sir at the helm, dedicated to revolutionizing JEE, NEET and Foundation preparation by making it more accessible, personalized, and engaging.</p>
-      </div>
-
-
-      {/* 2 */}
-      <div className="relative overflow-hidden">
-        <h2 className="mb-5 text-5xl font-bold text-white text-center">
-          Our<span className="text-[#2FC18B]"> Story</span>
-        </h2>
-
-        {/* Box container */}
-        <div className=" relative h-[700px]  mx-auto hidden md:block">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className={` px-8 border-[#060e1a] h-[250px] absolute w-[48%]  ${feature.bgColor} ${feature.rounded} ${feature.position} flex flex-col  justify-center text-left`}
-              style={{ background: feature.gradient || undefined }}
-            >
-
-              <p
-                className={`font-bold text-[24px] pb-3 ${feature.bgColor === 'bg-[#1b283d]' || feature.gradient ? 'text-white' : 'text-black'
-                  }`}
-              >
-                {feature.title}
-              </p>
-              <p
-                className={`font-medium  text-[16px] w-[95%] ${feature.bgColor === 'bg-[#1b283d]' || feature.gradient ? 'text-[#9EBDEF]' : 'text-black'
-                  }`}
-              >
-                {feature.desc}
-              </p>
-            </div>
-          ))}
+   <div className="w-full pt-30 overflow-hidden">
+      <div className="container mx-auto  px-4 sm:px-10 lg:px-8 py-3 sm:py-6">
+        {/* 1 */}
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-5xl font-bold mb-8">
+            Your Academic Dreams,{" "}
+            <span className="text-[#2FC18B]">Our Priority.</span>
+          </h2>
+          <p className="text-base text-[#9EBDEF] mb-8">
+            QuestPix was born from a simple yet powerful belief: every student
+            deserves the opportunity to achieve their JEE, NEET or other
+            academic dreams.
+          </p>
+          <p className="text-base text-[#9EBDEF] mb-20">
+            We are a team of passionate faculties, technologists, and
+            innovators, led by the very best Vijay Sharma Sir at the helm,
+            dedicated to revolutionizing JEE, NEET and Foundation preparation by
+            making it more accessible, personalized, and engaging.
+          </p>
         </div>
 
+        {/* 2 */}
+        <div className="relative overflow-hidden">
+          <h2 className="text-4xl sm:text-[43px] font-bold text-white text-center pb-5">
+            Our<span className="text-[#2FC18B]"> Story</span>
+          </h2>
 
-      </div>
-
-
-      {/* 3 */}
-      <div className=" py-10">
-        <h2 className="mb-12 text-[43px] font-bold text-center text-white">
-          Our Values <span className="text-[#2FC18B]">& Mission.</span>
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {values.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-b from-[#1e293b] to-[#0F1825] p-6 rounded-xl shadow-md flex flex-col gap-3 items-start"
-            >
-              {/* Icon as Image */}
-              <div className="bg-[#2FC18B] p-3 rounded-full flex items-center justify-center w-20 h-20">
-                <img src={item.icon} alt={item.title} />
-              </div>
-
-              {/* Text */}
-              <div>
-                <p className="text-white  text-sm mb-2">
-                  {item.title}:<span className="text-[#9EBDEF]"> {item.desc}</span>
+          {/* Desktop view */}
+          <div className="relative h-[700px] mx-auto hidden lg:block">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className={`px-8 border-[#060e1a] h-[250px] absolute w-[48%] ${feature.bgColor} ${feature.rounded} ${feature.position} flex flex-col justify-center text-left`}
+                style={{ background: feature.gradient || undefined }}
+              >
+                <p
+                  className={`font-bold text-[24px] pb-3 ${
+                    feature.bgColor === "bg-[#1b283d]" || feature.gradient
+                      ? "text-white"
+                      : "text-black"
+                  }`}
+                >
+                  {feature.title}
                 </p>
-
+                <p
+                  className={`text-base w-[95%] ${
+                    feature.bgColor === "bg-[#1b283d]" || feature.gradient
+                      ? "text-[#9EBDEF]"
+                      : "text-black"
+                  }`}
+                >
+                  {feature.desc}
+                </p>
               </div>
+            ))}
+          </div>
+
+          {/* Mobile view  */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden mb-15">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className={`px-6 py-6 rounded-2xl ${feature.bgColor} flex flex-col text-left`}
+                style={{ background: feature.gradient || undefined }}
+              >
+                <p
+                  className={`font-bold text-xl pb-2 ${
+                    feature.bgColor === "bg-[#1b283d]" || feature.gradient
+                      ? "text-white"
+                      : "text-black"
+                  }`}
+                >
+                  {feature.title}
+                </p>
+                <p
+                  className={`text-sm ${
+                    feature.bgColor === "bg-[#1b283d]" || feature.gradient
+                      ? "text-[#9EBDEF]"
+                      : "text-black"
+                  }`}
+                >
+                  {feature.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 3 */}
+        <div>
+          <h2 className="pb-10 text-3xl sm:text-[43px] font-bold text-center text-white">
+            Our Values <span className="text-[#2FC18B]">& Mission.</span>
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {values.map((item, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-b from-[#1e293b] to-[#0F1825] p-6 rounded-xl shadow-md flex flex-col gap-3 items-start"
+              >
+                {/* Icon as Image */}
+                <div className="bg-[#2FC18B] p-3 rounded-full flex items-center justify-center w-20 h-20">
+                  <img src={item.icon} alt={item.title} />
+                </div>
+
+                {/* Text */}
+                <div>
+                  <p className="text-white  text-sm mb-2">
+                    {item.title}:
+                    <span className="text-[#9EBDEF]"> {item.desc}</span>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 4 */}
+        <div className="text-center pt-15">
+          <h2 className="text-3xl sm:text-[39px] font-bold mb-8">
+            Our <span className="text-[#2FC18B]">Team.</span>
+          </h2>
+          <p className="text-lg text-[#9EBDEF] mb-10">
+            QuestPix is powered by a team of dedicated individuals who share a
+            passion for education and a commitment to student success.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-10 mx-auto">
+            <div>
+              <img
+                src="https://questpix.com/assets/images/about/CEO.png"
+                className="max-w-[300px]"
+              ></img>
+              <p className="text-[20px] font-bold mt-5">Mr.Vijay Sir</p>
+              <p className="text-[16px] text-[#2FC18B]">(CEO)</p>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 4 */}
-      <div className="text-center pt-20 pb-20">
-        <h2 className="text-[39px] font-bold mb-10">Our <span className="text-[#2FC18B]">Team.</span></h2>
-        <p className="text-[16px] text-[#9EBDEF] mb-15">QuestPix is powered by a team of dedicated individuals who share a passion for education and a commitment to student success.</p>
-        <div className="flex justify-center items-center gap-20 mx-auto">
-          <div>
-            <img src="https://questpix.com/assets/images/about/CEO.png" className="w-[350px]"></img>
-            <p className="text-[20px] font-bold mt-5">Mr.Vijay Sir</p>
-            <p className="text-[16px] text-[#2FC18B]">(CEO)</p>
-          </div>
-          <div>
-            <img src="https://questpix.com/assets/images/about/CTO.png" className="w-[350px]"></img>
-            <p className="text-[20px] font-bold mt-5">Mr.Sunny Sir</p>
-            <p className="text-[16px]  text-[#2FC18B]">(CTO)</p>
+            <div>
+              <img
+                src="https://questpix.com/assets/images/about/CTO.png"
+                className="max-w-[300px]"
+              ></img>
+              <p className="text-[20px] font-bold mt-5">Mr.Sunny Sir</p>
+              <p className="text-[16px]  text-[#2FC18B]">(CTO)</p>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   )
 }

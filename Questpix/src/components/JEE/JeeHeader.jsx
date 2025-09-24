@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react"; // icons
 import logo from "../../assets/head-logo.svg";
 
-
 export default function JeeHeader() {
   const navigate = useNavigate();
+
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(null); // for mobile accordions
@@ -13,8 +13,6 @@ export default function JeeHeader() {
   const toggleMenu = (menu) => {
     setOpenMenu(openMenu === menu ? null : menu);
   };
-
- ;
 
   // Close dropdown on outside click (desktop only)
   useEffect(() => {
@@ -27,6 +25,14 @@ export default function JeeHeader() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  // Close menus helper
+  const handleNavigate = (path) => {
+    navigate(path);
+    setOpenMenu(null); // close desktop dropdown
+    setMobileMenu(false); // close mobile menu
+    setMobileOpen(null); // close mobile accordion
+  };
+
   return (
     <div className="w-full fixed top-0 left-0 bg-[#0f1825] z-[1000]">
       <div className="container mx-auto  px-4 sm:px-10 lg:px-8 py-2 sm:py-4  flex justify-between items-center">
@@ -36,7 +42,7 @@ export default function JeeHeader() {
             src={logo}
             alt="Questpix Logo"
             className="h-16  sm:h-18 cursor-pointer"
-            onClick={() => navigate("/")}
+            onClick={() => handleNavigate("/")}
           />
         </div>
 
@@ -55,10 +61,18 @@ export default function JeeHeader() {
             {openMenu === "courses" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li>Class XI</li>
-                  <li>Class XII</li>
-                  <li>Class XII+</li>
-                  <li>Crash Course</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    Class XI
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    Class XII
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    Class XII+
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    Crash Course
+                  </li>
                 </ul>
               </div>
             )}
@@ -77,8 +91,12 @@ export default function JeeHeader() {
             {openMenu === "test-series" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-60 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li>JEE Main Test Series</li>
-                  <li>JEE Advanced Test Series</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    JEE Main Test Series
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    JEE Advanced Test Series
+                  </li>
                 </ul>
               </div>
             )}
@@ -86,7 +104,7 @@ export default function JeeHeader() {
 
           {/* Free Resources */}
           <button
-            onClick={() => navigate("/Jee/FreeResources")}
+            onClick={() => handleNavigate("/Jee/FreeResources")}
             className="cursor-pointer hover:text-[#2fc18b] "
           >
             Free Resources
@@ -105,8 +123,12 @@ export default function JeeHeader() {
             {openMenu === "target-exam" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li>JEE Main</li>
-                  <li>JEE Advanced</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    JEE Main
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    JEE Advanced
+                  </li>
                 </ul>
               </div>
             )}
@@ -125,14 +147,30 @@ export default function JeeHeader() {
             {openMenu === "study-material" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-64 z-50">
                 <ul className="space-y-4 text-[14px] cursor-pointer">
-                  <li>JEE Main Paper PDFs</li>
-                  <li>JEE Advanced Paper PDFs</li>
-                  <li>NCERT Maths Solution</li>
-                  <li>NCERT Physics Solution</li>
-                  <li>NCERT Chemistry Solution</li>
-                  <li>NCERT Maths Exemplar Solutions</li>
-                  <li>NCERT Physics Exemplar Solutions</li>
-                  <li>NCERT Chemistry Exemplar Solutions</li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    JEE Main Paper PDFs
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    JEE Advanced Paper PDFs
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Maths Solution
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Physics Solution
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Chemistry Solution
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Maths Exemplar Solutions
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Physics Exemplar Solutions
+                  </li>
+                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                    NCERT Chemistry Exemplar Solutions
+                  </li>
                 </ul>
               </div>
             )}
@@ -140,7 +178,7 @@ export default function JeeHeader() {
 
           {/* Why Us */}
           <button
-            onClick={() => navigate("/Jee/WhyDifferent")}
+            onClick={() => handleNavigate("/Jee/WhyDifferent")}
             className="cursor-pointer hover:text-[#2fc18b]"
           >
             Why Us
@@ -159,9 +197,24 @@ export default function JeeHeader() {
             {openMenu === "about-us" && (
               <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li onClick={() => navigate("/Jee/WhoWeare")}>Who We Are?</li>
-                  <li onClick={() => navigate("/Jee/ContactUs")}>Contact Us</li>
-                  <li onClick={() => navigate("/Jee/Career")}>Careers</li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/WhoWeare")}
+                  >
+                    Who We Are?
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/ContactUs")}
+                  >
+                    Contact Us
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/Career")}
+                  >
+                    Careers
+                  </li>
                 </ul>
               </div>
             )}
@@ -170,7 +223,7 @@ export default function JeeHeader() {
 
         {/* Right - Login Button (hidden on mobile) */}
         <button
-          onClick={() => navigate("/Auth/signup")}
+          onClick={() => handleNavigate("/Auth/signup")}
           className="hidden lg:block bg-[#2dcea1] text-base px-3 py-2 rounded-md cursor-pointer hover:underline"
         >
           Login/Sign up
@@ -190,13 +243,13 @@ export default function JeeHeader() {
         mobileMenu={mobileMenu}
         mobileOpen={mobileOpen}
         setMobileOpen={setMobileOpen}
-        navigate={navigate}
+        handleNavigate={handleNavigate}
       />
     </div>
   );
 }
 
-function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
+function MobileView({ mobileMenu, mobileOpen, setMobileOpen, handleNavigate }) {
   const toggleMenu = (menu) => {
     setMobileOpen(mobileOpen === menu ? null : menu);
   };
@@ -213,18 +266,44 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
                 className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
               >
                 Courses
-                {mobileOpen === "courses" ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {mobileOpen === "courses" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
               </button>
               <div
                 className={`transition-all duration-300 overflow-hidden ${
-                  mobileOpen === "courses" ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+                  mobileOpen === "courses"
+                    ? "max-h-60 opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
-                  <li onClick={() => navigate("/Jee/ClassXI")} className="cursor-pointer hover:text-[#2fc18b]">Class XI</li>
-                  <li onClick={() => navigate("/Jee/ClassXII")} className="cursor-pointer hover:text-[#2fc18b]">Class XII</li>
-                  <li onClick={() => navigate("/Jee/ClassXIIPlus")} className="cursor-pointer hover:text-[#2fc18b]">Class XII+</li>
-                  <li onClick={() => navigate("/Jee/CrashCourse")} className="cursor-pointer hover:text-[#2fc18b]">Crash Course</li>
+                  <li
+                    onClick={() => handleNavigate("/Jee/ClassXI")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    Class XI
+                  </li>
+                  <li
+                    onClick={() => handleNavigate("/Jee/ClassXII")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    Class XII
+                  </li>
+                  <li
+                    onClick={() => handleNavigate("/Jee/ClassXIIPlus")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    Class XII+
+                  </li>
+                  <li
+                    onClick={() => handleNavigate("/Jee/CrashCourse")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    Crash Course
+                  </li>
                 </ul>
               </div>
             </div>
@@ -236,23 +315,39 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
                 className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
               >
                 Test Series
-                {mobileOpen === "test-series" ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {mobileOpen === "test-series" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
               </button>
               <div
                 className={`transition-all duration-300 overflow-hidden ${
-                  mobileOpen === "test-series" ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  mobileOpen === "test-series"
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
-                  <li onClick={() => navigate("/Jee/MainTestSeries")} className="cursor-pointer hover:text-[#2fc18b]">JEE Main Test Series</li>
-                  <li onClick={() => navigate("/Jee/AdvancedTestSeries")} className="cursor-pointer hover:text-[#2fc18b]">JEE Advanced Test Series</li>
+                  <li
+                    onClick={() => handleNavigate("/Jee/MainTestSeries")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    JEE Main Test Series
+                  </li>
+                  <li
+                    onClick={() => handleNavigate("/Jee/AdvancedTestSeries")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    JEE Advanced Test Series
+                  </li>
                 </ul>
               </div>
             </div>
 
             {/* Free Resources */}
             <button
-              onClick={() => navigate("/Jee/FreeResources")}
+              onClick={() => handleNavigate("/Jee/FreeResources")}
               className="w-full bg-[#1b2b3e] px-4 py-3 rounded-xl shadow-md text-left hover:text-[#2fc18b]"
             >
               Free Resources
@@ -265,16 +360,32 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
                 className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
               >
                 Target Exam
-                {mobileOpen === "target-exam" ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {mobileOpen === "target-exam" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
               </button>
               <div
                 className={`transition-all duration-300 overflow-hidden ${
-                  mobileOpen === "target-exam" ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  mobileOpen === "target-exam"
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
-                  <li onClick={() => navigate("/Jee/MainExam")} className="cursor-pointer hover:text-[#2fc18b]">JEE Main</li>
-                  <li onClick={() => navigate("/Jee/AdvancedExam")} className="cursor-pointer hover:text-[#2fc18b]">JEE Advanced</li>
+                  <li
+                    onClick={() => handleNavigate("/Jee/MainExam")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    JEE Main
+                  </li>
+                  <li
+                    onClick={() => handleNavigate("/Jee/AdvancedExam")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
+                    JEE Advanced
+                  </li>
                 </ul>
               </div>
             </div>
@@ -286,29 +397,77 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
                 className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
               >
                 Study Material
-                {mobileOpen === "study-material" ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {mobileOpen === "study-material" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
               </button>
               <div
                 className={`transition-all duration-300 overflow-hidden ${
-                  mobileOpen === "study-material" ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  mobileOpen === "study-material"
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
-                  <li onClick={() => navigate("/Jee/MainPDFs")}>JEE Main Paper PDFs</li>
-                  <li onClick={() => navigate("/Jee/AdvancedPDFs")}>JEE Advanced Paper PDFs</li>
-                  <li onClick={() => navigate("/Jee/NCERTMaths")}>NCERT Maths Solution</li>
-                  <li onClick={() => navigate("/Jee/NCERTPhysics")}>NCERT Physics Solution</li>
-                  <li onClick={() => navigate("/Jee/NCERTChemistry")}>NCERT Chemistry Solution</li>
-                  <li onClick={() => navigate("/Jee/NCERTMathsExemplar")}>NCERT Maths Exemplar</li>
-                  <li onClick={() => navigate("/Jee/NCERTPhysicsExemplar")}>NCERT Physics Exemplar</li>
-                  <li onClick={() => navigate("/Jee/NCERTChemistryExemplar")}>NCERT Chemistry Exemplar</li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/MainPDFs")}
+                  >
+                    JEE Main Paper PDFs
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/AdvancedPDFs")}
+                  >
+                    JEE Advanced Paper PDFs
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/NCERTMaths")}
+                  >
+                    NCERT Maths Solution
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/NCERTPhysics")}
+                  >
+                    NCERT Physics Solution
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/NCERTChemistry")}
+                  >
+                    NCERT Chemistry Solution
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/NCERTMathsExemplar")}
+                  >
+                    NCERT Maths Exemplar
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/NCERTPhysicsExemplar")}
+                  >
+                    NCERT Physics Exemplar
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() =>
+                      handleNavigate("/Jee/NCERTChemistryExemplar")
+                    }
+                  >
+                    NCERT Chemistry Exemplar
+                  </li>
                 </ul>
               </div>
             </div>
 
             {/* Why Us */}
-          <button
-              onClick={() => navigate("/Jee/WhyDifferent")}
+            <button
+              onClick={() => handleNavigate("/Jee/WhyDifferent")}
               className="w-full bg-[#1b2b3e] px-4 py-3 rounded-xl text-left shadow-md hover:text-[#2fc18b]"
             >
               Why Us
@@ -318,28 +477,48 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
             <div className="bg-[#1b2b3e] rounded-xl   shadow-md overflow-hidden">
               <button
                 onClick={() => toggleMenu("about-us")}
-               className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
+                className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
               >
                 About Us
-                {mobileOpen === "about-us" ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {mobileOpen === "about-us" ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
               </button>
               <div
                 className={`transition-all duration-300 overflow-hidden ${
-                  mobileOpen === "about-us" ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  mobileOpen === "about-us"
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
-                  <li onClick={() => navigate("/Jee/WhoWeare")}>Who We Are?</li>
-                  <li onClick={() => navigate("/Jee/ContactUs")}>Contact Us</li>
-                  <li onClick={() => navigate("/Jee/Career")}>Careers</li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/WhoWeare")}
+                  >
+                    Who We Are?
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/ContactUs")}
+                  >
+                    Contact Us
+                  </li>
+                  <li
+                    className="hover:text-[#2fc18b] cursor-pointer"
+                    onClick={() => handleNavigate("/Jee/Career")}
+                  >
+                    Careers
+                  </li>
                 </ul>
               </div>
-
             </div>
 
             {/* Login */}
             <button
-              onClick={() => navigate("/Auth/signup")}
+              onClick={() => handleNavigate("/Auth/signup")}
               className="w-full bg-[#2dcea1] text-white px-4 py-3 rounded-xl shadow-md hover:opacity-90"
             >
               Login / Sign up
@@ -350,4 +529,3 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, navigate }) {
     </>
   );
 }
-

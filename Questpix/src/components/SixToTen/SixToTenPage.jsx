@@ -12,7 +12,8 @@ import SixFAQSection from "./SixFAQSection"
 
 export default function SixToTenPage() {
   return (
-    <div>        
+    <div className="w-full overflow-hidden">
+      <div className="container mx-auto  px-4 sm:px-10 lg:px-8 py-3 sm:py-6">     
         <SixHeroSection/>
         <SixCarousel/>
         <SixFeatureGrid/>
@@ -23,6 +24,7 @@ export default function SixToTenPage() {
         <Courses/>
         <SixEnroll/>
         <SixFAQSection/>
+    </div>
     </div>
   )
 }
