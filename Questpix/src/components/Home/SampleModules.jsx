@@ -1,31 +1,35 @@
 import React from "react";
+import class6 from "../../assets/Home/4.png"
+import class9 from "../../assets/Home/3.png"
+import class11Neet from "../../assets/Home/2.png"
+import class11Jee from "../../assets/Home/1.png"
 
 const programs = [
   {
     title: "Sample Study Material for Pre-Foundation",
     classes: "Classes 6 - 8",
-    image: "https://questpix.com/assets/images/partner_with/4.png",
+    image: class6,
     download:
       "https://questpix.nyc3.cdn.digitaloceanspaces.com/questpix/PDF/study_material_sample/Class%20%206%20-%208.zip",
   },
   {
     title: "Sample Study Material for Foundation",
     classes: "Classes 9 - 10",
-    image: "https://questpix.com/assets/images/partner_with/3.png",
+    image: class9,
     download:
       "https://questpix.nyc3.cdn.digitaloceanspaces.com/questpix/PDF/study_material_sample/Class%209%20-%2010.zip",
   },
   {
     title: "Sample Study Material for JEE",
     classes: "Classes 11 - 12",
-    image: "https://questpix.com/assets/images/partner_with/1.png",
+    image: class11Jee,
     download:
       "https://questpix.nyc3.cdn.digitaloceanspaces.com/questpix/PDF/study_material_sample/JEE.zip",
   },
   {
     title: "Sample Study Material for NEET",
     classes: "Classes 11 - 12",
-    image: "https://questpix.com/assets/images/partner_with/2.png",
+    image: class11Neet,
     download:
       "https://questpix.nyc3.cdn.digitaloceanspaces.com/questpix/PDF/study_material_sample/NEET.zip",
   },
@@ -56,7 +60,7 @@ export default function SampleModules() {
               <img
                 src={program.image}
                 alt={`${program.title} icon`}
-                className="w-[220px] h-[240px] object-contain"
+                className="w-[300px] h-[300px] object-contain"
               />
               <h3 className="text-lg md:text-xl pt-5 font-bold text-white">
                 {program.title}

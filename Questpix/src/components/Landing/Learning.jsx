@@ -1,17 +1,20 @@
 import React from 'react';
+import landingclass1 from "../../assets/Landing/landingclass1.png";
+import landingclass2 from "../../assets/Landing/landingclass2.png";
+import landingclass3 from "../../assets/Landing/landingclass3.png";
 
 const categories = [
   {
     title: 'JEE',
-    image: 'https://dev.questpix.com/assets/images/jee_landing/landingclass1.png',
+    image: landingclass1,
   },
   {
     title: 'NEET',
-    image: 'https://dev.questpix.com/assets/images/jee_landing/landingclass2.png',
+    image: landingclass2,
   },
   {
     title: 'Class 6–10',
-    image: 'https://dev.questpix.com/assets/images/jee_landing/landingclass3.png',
+    image: landingclass3,
   },
 ];
 

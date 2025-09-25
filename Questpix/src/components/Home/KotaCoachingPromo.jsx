@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import coachingv from "../../assets/Home/coachingv.png"
+
 
 export default function KotaCoachingPromo() {
   const [playVideo, setPlayVideo] = useState(false);
@@ -28,7 +30,7 @@ export default function KotaCoachingPromo() {
           ambitious students, equipping them with everything they need for JEE,
           NEET & Foundation success.
         </p>
-        <div className="w-[180px] mx-auto lg:mx-0 bg-transparent border-2 border-[#2FC18B] py-3 rounded-full hover:bg-[#2FC18B] hover:text-white transition">
+        <div className="w-[180px] mx-auto lg:mx-0 bg-transparent border-2 border-[#2FC18B] py-2 rounded-full hover:bg-[#2FC18B] hover:text-white transition">
           <a
             href="#"
             className="flex justify-center items-center gap-2 text-[16px] sm:text-[18px]"
@@ -43,9 +45,9 @@ export default function KotaCoachingPromo() {
         {!playVideo ? (
           <div className="cursor-pointer" onClick={handlePlay}>
             <img
-              src="https://questpix.com/assets/images/partner_with/coachingv.png"
+              src={coachingv}
               alt="Video Thumbnail"
-              className="w-full h-auto max-w-[500px] object-cover rounded-lg shadow-lg"
+              className="w-full h-auto max-w-[600px] object-cover rounded-lg shadow-lg"
             />
           </div>
         ) : (

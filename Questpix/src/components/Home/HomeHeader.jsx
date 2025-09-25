@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
+import logo from "../../assets/head-logo.svg";
 
 export default function HomeHeader() {
   const navigate = useNavigate();
@@ -9,12 +10,11 @@ export default function HomeHeader() {
   return (
     <div className="w-full fixed top-0 left-0 bg-[#0f1825] z-[1000]">
       <div className="max-w-[1300px] mx-auto flex justify-between items-center px-4 sm:px-5 lg:px-4 py-3 sm:py-4">
-        {/* Logo */}
         <div>
           <img
-            src="https://dev.questpix.com/assets/images/logo.svg"
+            src={logo}
             alt="Questpix Logo"
-            className="h-14 sm:h-16 md:h-18 cursor-pointer object-contain"
+            className="h-16 sm:h-16  md:h-18 cursor-pointer object-contain"
             onClick={() => navigate("/")}
           />
         </div>
@@ -44,46 +44,41 @@ export default function HomeHeader() {
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? (
-              <X size={40} />
-            ) : (
-              <Menu size={40}  />
-            )}
+            {menuOpen ? <X size={40} /> : <Menu size={40} />}
           </button>
         </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="md:hidden bg-[#1f2f45]  font-bold flex flex-col items-center gap-4 py-4">
-            <a href="#section-0" onClick={() => setMenuOpen(false)}>
-              Study Material Package
-            </a>
-            <a href="#section-1" onClick={() => setMenuOpen(false)}>
-              Testing Platform
-            </a>
-            <a href="#section-2" onClick={() => setMenuOpen(false)}>
-              Recorded
-            </a>
-            <a href="#section-3" onClick={() => setMenuOpen(false)}>
-              Rank Booster
-            </a>
-            <a href="#section-4" onClick={() => setMenuOpen(false)}>
-              School Integrated Program
-            </a>
-            <button
-              onClick={() => {
-                navigate("/");
-                setMenuOpen(false);
-              }}
-              className="bg-[#2fc18b] font-medium rounded-lg cursor-pointer
-              px-4 py-2 text-sm hover:text-[#007bff] transition-all duration-300 ease-in-out"
-            >
-              Home
-            </button>
-          </div>
-        )}
       </div>
-    
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#1f2f45]  font-bold flex flex-col items-center gap-4 py-4">
+          <a href="#section-0" onClick={() => setMenuOpen(false)}>
+            Study Material Package
+          </a>
+          <a href="#section-1" onClick={() => setMenuOpen(false)}>
+            Testing Platform
+          </a>
+          <a href="#section-2" onClick={() => setMenuOpen(false)}>
+            Recorded
+          </a>
+          <a href="#section-3" onClick={() => setMenuOpen(false)}>
+            Rank Booster
+          </a>
+          <a href="#section-4" onClick={() => setMenuOpen(false)}>
+            School Integrated Program
+          </a>
+          <button
+            onClick={() => {
+              navigate("/");
+              setMenuOpen(false);
+            }}
+            className="bg-[#2fc18b] font-medium rounded-lg cursor-pointer
+              px-4 py-2 text-sm hover:text-[#007bff] transition-all duration-300 ease-in-out"
+          >
+            Home
+          </button>
+        </div>
+      )}
+    </div>
   );
 }

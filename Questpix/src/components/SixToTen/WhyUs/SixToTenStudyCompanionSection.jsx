@@ -1,13 +1,17 @@
 import React from "react";
+import L1 from "../../../assets/jee-images/L1.png";
+import L2 from "../../../assets/jee-images/L2.png";
+import R1 from "../../../assets/jee-images/R1.png";
+import R2 from "../../../assets/jee-images/R2.png";
 
 const leftCards = [
   {
-    icon: "https://questpix.com/assets/images/whydiffrent/L1.png",
+    icon: L1,
     text:
       "QuestPix isn't just another preparation app. We're revolutionizing the way students learn and succeed with personalized tools, expert guidance, and a commitment to your unique journey.",
   },
   {
-    icon: "https://questpix.com/assets/images/whydiffrent/L2.png",
+    icon:L2,
     text:
       "We understand that every JEE/NEET or Foundation student is different, with unique strengths, weaknesses, and learning styles. That's why we've created a platform that has something for each one of YOU, providing the resources and support you need to achieve your goals.",
   },
@@ -15,12 +19,12 @@ const leftCards = [
 
 const rightCards = [
   {
-    icon: "https://questpix.com/assets/images/whydiffrent/R1.png",
+    icon: R1,
     text:
       "At QuestPix, we believe every student deserves the opportunity to achieve their academic dreams. Our mission is to provide accessible, personalized, and engaging learning experiences that empower students to reach their full potential.",
   },
   {
-    icon: "https://questpix.com/assets/images/whydiffrent/R2.png",
+    icon: R2,
     text:
       "We envision a future where JEE/NEET or any other exam preparation is no longer a daunting challenge, but an exciting journey of discovery and growth.",
   },

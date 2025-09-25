@@ -1,47 +1,52 @@
 import React from "react";
-
+import six from "../../assets/Home/6.svg"
+import five from "../../assets/Home/5.svg"
+import four from "../../assets/Home/4.svg"
+import three from "../../assets/Home/3.svg"
+import two from "../../assets/Home/2.svg"
+import one from "../../assets/Home/1.svg"
 const programs = [
   {
     title: "Kota's Academic Excellence, On-Campus",
     description:
       "We integrate <span class='text-[#2FC18B]'>Kota's proven methodology and faculty expertise</span>, bringing top-tier competitive exam success directly to your school or institute.",
     gradient: "linear-gradient(to bottom, #202F47, #3a547e00)",
-    image: "https://questpix.com/assets/images/partner_with/6.svg",
+    image: six,
   },
   {
     title: "Your Ultimate Test Creation Tool",
     description:
       "Our  <span class='text-[#2FC18B]'>powerful Test Generator</span> allows precise customization of online/offline tests by exam, subject, chapter, concept, and more including <span class='text-[#2FC18B]'>school branding </span> on print-ready papers.",
     gradient: "linear-gradient(to bottom, #2FC18B, #7be4c100)",
-    image: "http://questpix.com/assets/images/partner_with/1.svg",
+    image: one,
   },
   {
     title: "Instant AI-Powered Doubt Resolution",
     description:
       "Students get <span class='text-[#2FC18B]'> immediate, step-by-step solutions </span> to any problem via the <span class='text-[#2FC18B]'>QuestPix App's AI-Powered Doubt Resolution,</span> ensuring proper learning and constant progress from Class 6 to 12.",
     gradient: "linear-gradient(to bottom, #202F47, #3a547e00)",
-    image: "https://questpix.com/assets/images/partner_with/5.svg",
+    image:five,
   },
   {
     title: "Flexible Learning & Practice Tools",
     description:
       "The <span class='text-[#2FC18B]'> QuestPix App offers custom tests </span>from 1 lakh+ questions,<span class='text-[#2FC18B]'> interactive flashcards, and on-demand pre-recorded lectures </span> for extensive learning anytime, anywhere.",
     gradient: "linear-gradient(to bottom, #2FC18B, #7be4c100)",
-    image: "http://questpix.com/assets/images/partner_with/3.svg",
+    image: three,
   },
   {
     title: "National Performance Benchmarking",
     description:
       "Engage students with our <span class='text-[#2FC18B]'>All-India Test Series</span> for JEE/NEET.<span class='text-[#2FC18B]'> Detailed performance analytics </span> on the QuestPix App pinpoint strengths and areas for improvement.",
     gradient: "linear-gradient(to bottom, #202F47, #3a547e00)",
-    image: "https://questpix.com/assets/images/partner_with/4.svg",
+    image: four,
   },
   {
     title: "Elite Student & Career Nurturing",
     description:
       "Our Top <span class='text-[#2FC18B]'>500 AIR Club </span> provides advanced guidance for securing under 500 ranks. Students also receive <span class='text-[#2FC18B]'>expert career counselling </span> to shape their academic and professional future.",
     gradient: "linear-gradient(to bottom, #2FC18B, #7be4c100)",
-    image: "https://questpix.com/assets/images/partner_with/2.svg",
+    image: two,
   },
 ];
 

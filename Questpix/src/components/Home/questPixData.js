@@ -1,3 +1,8 @@
+import resources from "../../assets/Home/resources.png"
+import management from "../../assets/Home/management.png"
+import system from "../../assets/Home/system.png"
+import development from "../../assets/Home/development.png"
+import analysis from "../../assets/Home/analysis.png"
 
 const questPixData = [
   {
@@ -19,7 +24,7 @@ const questPixData = [
           "Our resources are produced with premium quality materials which look professional and are built to last.",
       },
     ],
-    image: "https://questpix.com/assets/images/partner_with/resources.png",
+    image: resources,
   },
   {
     title: "Advanced Testing Platform",
@@ -40,7 +45,7 @@ const questPixData = [
           "Students get in-depth performance analysis for All-India Test Series on the QuestPix App for targeted improvement.",
       },
     ],
-    image: "https://questpix.com/assets/images/partner_with/management.png",
+    image:management,
   },
   {
     title: "Recorded Lectures & Doubt Resolution System",
@@ -61,7 +66,7 @@ const questPixData = [
           "Interactive flashcards help students memorise essential formulas and concepts easily. They are also good for last-minute revisions.",
       },
     ],
-    image: "https://questpix.com/assets/images/partner_with/system.png",
+    image: system,
   },
   {
     title: "Holistic Student & Institutional Development",
@@ -82,7 +87,7 @@ const questPixData = [
           "We assist in creating marketing content and organizing promotional activities to boost visibility of your organization.",
       },
     ],
-    image: "https://questpix.com/assets/images/partner_with/development.png",
+    image: development,
   },
   {
     title: "Academic Curriculum Management",
@@ -103,7 +108,7 @@ const questPixData = [
           "We implement a complete JEE/NEET/Pre-Foundation/Foundation ecosystem into your organisation with all the study materials & tools.",
       },
     ],
-    image: "https://questpix.com/assets/images/partner_with/analysis.png",
+    image: analysis,
    
   },
 ];

@@ -1,4 +1,7 @@
 import React from "react";
+import prefoundation from "../../assets/Home/pre-foundation.png"
+import foundation from "../../assets/Home/foundation.png"
+import jeeneet from "../../assets/Home/jee-neet.png"
 
 const programs = [
   {
@@ -7,7 +10,7 @@ const programs = [
       "Building core concepts and laying the essential groundwork for future academic challenges.",
     classes: "Class 6 - 8",
     gradient: "linear-gradient(to bottom, #202F47, #3a547e00)",
-    icon: "https://questpix.com/assets/images/partner_with/pre-foundation.png",
+    icon:prefoundation,
     iconBg: "bg-[#28b8ff]",
   },
   {
@@ -16,7 +19,7 @@ const programs = [
       "Comprehensive groundwork for Olympiads, NTSE, and early JEE/NEET preparedness.",
     classes: "Class 9 - 10",
     gradient: "linear-gradient(to bottom, #2FC18B, #7be4c100)",
-    icon: "https://questpix.com/assets/images/partner_with/foundation.png",
+    icon: foundation,
     iconBg: "bg-[#b3ffee]",
   },
   {
@@ -25,7 +28,7 @@ const programs = [
       "Targeted, intensive programs for securing admission into India's premier engineering and medical colleges.",
     classes: "Class 10 - 12",
     gradient: "linear-gradient(to bottom, #202F47, #3a547e00)",
-    icon: "https://questpix.com/assets/images/partner_with/jee-neet.png",
+    icon: jeeneet,
     iconBg: "bg-[#ffd700]",
   },
 ];
@@ -56,7 +59,7 @@ export default function ProgramCategories() {
                 <img
                   src={program.icon}
                   alt={`${program.title} icon`}
-                  className="w-10 h-10"
+                  className="w-20 h-20"
                 />
               </div>
               <h3 className="text-xl font-bold mb-2">{program.title}</h3>

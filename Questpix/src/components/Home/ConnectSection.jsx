@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import contact from "../../assets/Home/contact.png"
+import plan from "../../assets/Home/plan.svg"
+
 
 export default function ConnectSection() {
   const [formData, setFormData] = useState({
@@ -65,7 +68,7 @@ export default function ConnectSection() {
         {/* Illustration */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="https://questpix.com/assets/images/partner_with/contact.png"
+            src={contact}
             alt="Support Illustration"
             className="w-[70%] md:w-[60%]"
           />
@@ -228,7 +231,7 @@ export default function ConnectSection() {
               className="bg-[#23c7a5] hover:bg-[#1eae92] px-6 py-2 cursor-pointer rounded-lg mt-4 flex items-center gap-2"
             >
               <img
-                src="https://questpix.com/assets/images/partner_with/plan.svg"
+                src={plan}
                 alt="Plan Icon"
                 className="w-5 h-5"
               />

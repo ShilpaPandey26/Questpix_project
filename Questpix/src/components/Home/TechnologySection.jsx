@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import virtualclassthumb from "../../assets/Home/virtual_class_thumb.png"
+import Partners_App_Features_Thumbnail from "../../assets/Home/Partners_App_Features_Thumbnail.png"
 
 export default function TechnologySection() {
   const [playVideo, setPlayVideo] = useState(false);
@@ -30,7 +32,7 @@ export default function TechnologySection() {
           {!playVideo ? (
             <div className="cursor-pointer" onClick={handlePlay}>
               <img
-                src="https://questpix.com/assets/images/partner_with/virtual_class_thumb.png"
+                src={virtualclassthumb}
                 alt="Video Thumbnail"
                 className="w-full h-auto max-w-[500px] object-cover rounded-lg shadow-lg"
               />
@@ -57,7 +59,7 @@ export default function TechnologySection() {
           {!playVideo ? (
             <div className="cursor-pointer" onClick={handlePlay}>
               <img
-                src="https://questpix.com/assets/images/partner_with/Partners_App_Features_Thumbnail.png"
+                src={Partners_App_Features_Thumbnail}
                 alt="Video Thumbnail"
                 className="w-full h-auto max-w-[500px] object-cover rounded-lg shadow-lg"
               />

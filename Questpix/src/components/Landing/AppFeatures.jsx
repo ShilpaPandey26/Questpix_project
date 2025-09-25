@@ -1,9 +1,13 @@
 import React from 'react';
+import landinglive from "../../assets/Landing/landinglive.png";
+import landingper from "../../assets/Landing/landingper.png";
+import landingphoto from "../../assets/Landing/landingphoto.png";
+import landingquiz from "../../assets/Landing/landingquiz.png";
 
 const features = [
   {
     title: 'Online Live Classes, Pre-Recorded Lectures & Flashcards',
-    icon: 'https://dev.questpix.com/assets/images/jee_landing/landinglive.png',
+    icon: landinglive,
     bgColor: '',
     gradient: 'linear-gradient(to top, #1e293b 0%, #0F1825 100%)',
     rounded: 'rounded-tl-[60px]',
@@ -11,21 +15,21 @@ const features = [
   },
   {
     title: 'Test Series with Performance Analytics & Rank Prediction',
-    icon: 'https://dev.questpix.com/assets/images/jee_landing/landingper.png',
+    icon: landingper,
     bgColor: 'bg-[#2FC18B]',
     rounded: 'rounded-br-[60px]',
     lgStyle: { top: '9.5rem', right: '17%' },
   },
   {
     title: 'Instant Photo Click Solutions & Doubt Chat with Teachers',
-    icon: 'https://dev.questpix.com/assets/images/jee_landing/landingphoto.png',
+    icon: landingphoto,
     bgColor: 'bg-[#FFD324]',
     rounded: 'rounded-tl-[60px]',
     lgStyle: { top: '12rem', left: '4%' },
   },
   {
     title: 'Daily Quizzes, Custom Practice & Previous Year Questions',
-    icon: 'https://dev.questpix.com/assets/images/jee_landing/landingquiz.png',
+    icon: landingquiz,
     bgColor: '',
     gradient: 'linear-gradient(to top, #1e293b 0%, #0F1825 100%)',
     rounded: 'rounded-br-[60px]',
@@ -74,7 +78,7 @@ export default function AppFeatures() {
               ...feature.lgStyle,
             }}
           >
-            <img src={feature.icon} alt="icon" className="h-20 mb-4" />
+            <img src={feature.icon} alt="icon" className="h-20 mt-2" />
             <p
               className={`font-medium text-xl ${
                 feature.bgColor === 'bg-[#1b283d]' || feature.gradient

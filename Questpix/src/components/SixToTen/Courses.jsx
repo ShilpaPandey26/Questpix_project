@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import girlimg from "../../assets/SixToTen/girl.png"
 const courses = [
     {
      class: "Class 6",
@@ -50,7 +50,7 @@ const courses = [
       
     },
     {
-        class: "Class 6",
+        class: "Class 10",
       title: "ICSE Board & Olympiad Booster (Maths & Science) Online Course",
       description:
         "Strengthen your ICSE Maths and Science foundation and gain an edge in Olympiad competitions.",
@@ -62,7 +62,7 @@ const courses = [
       
     },
     {
-        class: "Class 6",
+        class: "Class 9",
       title: "NCERT & Olympiad (All Subjects) Combo Online Course",
       description:
         "Explore the exciting world of Olympiads across multiple subjects and build a strong academic foundation with NCERT.",
@@ -74,7 +74,7 @@ const courses = [
       
     },
     {
-        class: "Class 6",
+        class: "Class 7",
       title: "Maths Accelerator Online Course",
       description:
         "Dedicated LIVE classes to help CBSE Class 6 students master the core concepts of Mathematics.",
@@ -86,7 +86,7 @@ const courses = [
    
     },
     {
-        class: "Class 6",
+        class: "Class 8",
       title: "Science Accelerator Online Course",
       description:
         "Build a strong and lasting understanding of fundamental Science concepts (Physics, Chemistry, Biology) in Class 6.",
@@ -100,25 +100,21 @@ const courses = [
   ];
 
 
-
 export default function Courses() {
   const [selectedClass, setSelectedClass] = useState("Class 6");
-
   const classes = ["Class 6", "Class 7", "Class 8", "Class 9", "Class 10"];
 
   return (
-    <div className="container">
-    <div className=" py-10">
-      {/* Heading Section */}
-      <div className="text-center max-w-3xl mx-auto px-4">
-        <h2 className="text-[38px] md:text-4xl font-bold text-white">
+    <div className="py-12 px-4 sm:px-6 lg:px-8">
+      {/* Heading */}
+      <div className="text-center max-w-3xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
           Explore Our{" "}
           <span className="text-[#2FC18B]">Comprehensive Curriculums</span>
         </h2>
-        <p className="mt-3 text-[16px] text-white">
-          Our meticulously crafted curriculum, aligned with CBSE, ICSE, and
-          State Boards, ensures a strong understanding of core concepts and
-          prepares students for academic success.
+        <p className="mt-4 text-sm text-white">
+          Our meticulously crafted curriculum, aligned with CBSE, ICSE, and State Boards,
+          ensures a strong understanding of core concepts and prepares students for academic success.
         </p>
 
         {/* Filter Buttons */}
@@ -127,11 +123,11 @@ export default function Courses() {
             <button
               key={cls}
               onClick={() => setSelectedClass(cls)}
-              className={`px-5 py-2 rounded-full border-2 ${
+              className={`px-5 py-2 rounded-full border-2 transition ${
                 selectedClass === cls
-                  ? "   border-[#2FC18B] bg-[#2FC18B] hover:bg-[#2FC18B] cursor-pointer "
-                  : " border-[#2FC18B]  "
-              } transition`}
+                  ? "border-[#2FC18B] bg-[#2FC18B] text-black"
+                  : "border-[#2FC18B] text-white"
+              }`}
             >
               {cls}
             </button>
@@ -139,34 +135,36 @@ export default function Courses() {
         </div>
       </div>
 
-        {/* Courses Grid */}
-      <div className="grid grid-cols-4 gap-5 w-6xl mx-auto px-2 mt-10">
+      {/* Courses Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 max-w-6xl mx-auto">
         {courses
           .filter((c) => c.class === selectedClass)
           .map((course, index) => {
             const isEven = index % 2 === 0;
-            const boxColor = isEven ? "bg-[#2fc18b] text-black" : "bg-[#0a0e1a] text-white";
+            const boxColor = isEven
+              ? "bg-[#2fc18b] text-black"
+              : "bg-[#0a0e1a] text-white";
             const textColor = isEven ? "text-black" : "text-white";
+
             return (
               <div
                 key={index}
-                className={`${boxColor} border-2 border-[#2fc18b] rounded-xl shadow-lg p-5 w-[270px] flex flex-col justify-between`}
+                className={`${boxColor} border-2 border-[#2fc18b] rounded-xl shadow-lg p-5 w-full max-w-[280px] flex flex-col justify-between mx-auto`}
               >
                 <div>
-                  <h3 className="text-lg font-bold">{course.title}</h3>
-                  <p className="text-sm pb-4">{course.description}</p>
+                  <h3 className="text-lg  font-bold">{course.title}</h3>
+                  <p className="text-sm  pb-4">{course.description}</p>
 
-                 <h2 className={`${textColor} text-lg font-bold`}>Key Features</h2> 
-
-                  <ul className="list-disc  space-y-1 text-sm p-2">
+                  <h2 className={`${textColor} text-lg  font-bold`}>Key Features</h2>
+                  <ul className="list-disc space-y-1 text-sm sm:text-base p-2">
                     {course.features.map((f, i) => (
-                        
                       <li key={i}>{f}</li>
                     ))}
                   </ul>
                 </div>
+
                 <div className="mt-4">
-                  <button className="flex items-center justify-center gap-2 bg-[#0a0e1a] border-2 border-[#2fc18b] px-4 py-2 rounded-full text-white cursor-pointer">
+                  <button className="flex items-center justify-center gap-2 bg-[#0a0e1a] border-2 border-[#2fc18b] px-4 py-2 rounded-full text-white w-full hover:bg-[#2FC18B] hover:text-black transition">
                     Know More →
                   </button>
                 </div>
@@ -174,11 +172,15 @@ export default function Courses() {
             );
           })}
       </div>
-    </div>
 
-    <div>
-        <img src="https://questpix.com/assets/images/6to10/girl.png"></img>
-    </div>
+      {/* Bottom Image */}
+      <div className="mt-12 flex justify-center">
+        <img
+          src={girlimg}
+          alt="Decorative"
+          
+        />
+      </div>
     </div>
   );
 }

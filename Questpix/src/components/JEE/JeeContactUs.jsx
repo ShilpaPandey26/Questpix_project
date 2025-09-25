@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import  detail_img from "../../assets/Contact/detail-img.png"
 
 export default function JeeContactUs() {
   const socials = [
@@ -112,7 +113,7 @@ export default function JeeContactUs() {
           {/* Right Section (Illustration) */}
           <div className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0">
             <img
-              src="https://questpix.com/assets/images/contact/detail-img.png"
+              src={detail_img}
               alt="customer-support"
               className="max-w-[250px] sm:max-w-[300px] md:max-w-[400px] w-full"
             />

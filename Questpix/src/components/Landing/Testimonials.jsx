@@ -48,7 +48,7 @@ const TestData = [
     text: "I found it hard to stay motivated during long study hours. The live classes of QuestPix are so good. The teachers are amazing, and",
     name: "Rohan",
     location: "Chennai",
-  image: "https://dev.questpix.com/assets/images/jee_landing/kanishk.jpg",
+    image: "https://dev.questpix.com/assets/images/jee_landing/kanishk.jpg",
     bgColor: "bg-[#2FC18B]",
   },
 ];

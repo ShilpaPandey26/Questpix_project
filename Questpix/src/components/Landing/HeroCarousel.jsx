@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import IIT from "../../assets/Landing/IIT.jpg";
+import Class6 from "../../assets/Landing/Class6.jpg";
+import NEET from "../../assets/Landing/NEET.jpg";
 
-const images = [
-  "https://dev.questpix.com/assets/images/jee_landing/IIT.jpg",
-  "https://dev.questpix.com/assets/images/jee_landing/Class6-10.jpg",
-  "https://dev.questpix.com/assets/images/jee_landing/NEET.jpg"
-];
+const images = [IIT, Class6, NEET];
 
 export default function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);

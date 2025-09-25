@@ -1,4 +1,5 @@
 import React from "react";
+import missout from "../../assets/Home/miss-out.png"
 
 export default function StartToday() {
   return (
@@ -22,7 +23,7 @@ export default function StartToday() {
           {/* Right Side */}
           <div className="md:w-1/2 flex justify-center items-center md:mt-0 mt-8">
             <img
-              src="https://questpix.com/assets/images/partner_with/miss-out.png"
+              src={missout}
               alt="Illustration"
               className="w-[70%] max-w-md"
             />

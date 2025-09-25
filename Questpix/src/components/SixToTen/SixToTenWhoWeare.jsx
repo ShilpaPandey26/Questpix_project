@@ -1,5 +1,8 @@
 import React from 'react'
-
+import heart from "../../assets/About/heart.svg"
+import inovation from "../../assets/About/inovation.svg"
+import accessibility from "../../assets/About/accessibility.svg"
+import passion from "../../assets/About/passion.svg"
 const features = [
   {
     title: "A Visionary's Insight",
@@ -36,22 +39,22 @@ const features = [
 
 const values = [
   {
-    icon: "https://questpix.com/assets/images/about/heart.svg",
+    icon: heart,
     title: "Student-Centric Approach",
     desc: "We put students at the heart of everything we do. Our platform is designed to take care of individual learning styles and needs, ensuring that every student feels supported and properly mentored.",
   },
   {
-    icon: "https://questpix.com/assets/images/about/inovation.svg",
+    icon: inovation,
     title: "Innovation at the Core",
     desc: "We are committed to continuous improvement and innovation. We constantly work to enhance our platform with the latest technology and teaching methodologies to provide the best possible learning experience.",
   },
   {
-    icon: "https://questpix.com/assets/images/about/accessibility.svg",
+    icon: accessibility,
     title: "Accessibility and Affordability",
     desc: "We believe that quality JEE, NEET or Foundation preparation should be accessible to all. We are committed to making our platform affordable and accessible to students from all backgrounds, and that’s why many of our top features are completely free.",
   },
   {
-    icon: "https://questpix.com/assets/images/about/passion.svg",
+    icon: passion,
     title: "Passion for Education",
     desc: "We are passionate about education and believe in its power to transform lives. We are dedicated to helping students reach their peak and pursue their dreams.",
   },

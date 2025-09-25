@@ -1,46 +1,43 @@
 import React from "react";
-import {
-  ArrowUpRight,
-  Users,
-  LineChart,
-  GitBranch,
-  Building,
-} from "lucide-react";
+import meaing from "../../assets/Career/meaing.png";
+import part from "../../assets/Career/part.png";
+import grow from "../../assets/Career/grow.png";
+import gear from "../../assets/Career/gear.png";
+import mission from "../../assets/Career/mission.png";
 
 export default function NeetCareer() {
   const features = [
     {
-      icon: "https://questpix.com/assets/images/career/meaing.png",
+      icon: meaing,
       title: "Make a meaningful impact",
       desc: "Help students achieve their dreams and reach their full potential.",
       border: "border-[#2fc18b]",
     },
     {
-      icon: "https://questpix.com/assets/images/career/part.png",
+      icon: part,
       title: "Be part of a dynamic team",
       desc: "Collaborate with talented and passionate individuals who are committed to revolutionizing education.",
       border: "border-[#2fc18b]",
     },
     {
-      icon: "https://questpix.com/assets/images/career/grow.png",
+      icon: grow,
       title: "Grow and develop",
       desc: "Enjoy opportunities for professional growth and development in a fast-paced and innovative environment.",
       border: "border-[#facc15]",
     },
     {
-      icon: "https://questpix.com/assets/images/career/gear.png",
+      icon: gear,
       title: "Work with cutting-edge technology",
       desc: "Contribute to the development of a leading-edge ed-tech platform.",
       border: "border-[#a855f7]",
     },
     {
-      icon: "https://questpix.com/assets/images/career/mission.png",
+      icon: mission,
       title: "Be part of a mission-driven company.",
       desc: "Join a company that is dedicated to making quality education accessible to all.",
       border: "border-[#38bdf8]",
     },
   ];
-
   return (
     <div className="w-full pt-20 sm:pt-30 overflow-hidden">
       <div className="container mx-auto  px-4 sm:px-10 lg:px-8 py-10 sm:py-12">
@@ -78,9 +75,9 @@ export default function NeetCareer() {
                 className="flex flex-col p-3 items-center text-center sm:text-left border border-gray-800 lg:border-0"
               >
                 <div
-                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center border-2 ${item.border} mb-3`}
+                  className={`w-16 h-16  rounded-full flex items-center justify-center border-2 ${item.border} mb-3`}
                 >
-                  <img src={item.icon} alt={item.title} className="w-6 h-6" />
+                  <img src={item.icon} alt={item.title} className="w-16 h-16" />
                 </div>
                 <p className="text-base">
                   <span className="font-semibold">{item.title}:</span>{" "}
