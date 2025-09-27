@@ -1,10 +1,10 @@
 import React from "react";
 import top from "../../../../assets/jee-images/courses/classXII/top.png";
-import phone from "../../../../assets/jee-images/courses/vector.png";
+import phone from "../../../../assets/jee-images/courses/Vector.png";
 
 export default function ClassXIIProgram() {
   return (
-    <div className="container mx-auto px-4 pt-30 flex flex-col md:flex-row items-center md:justify-between">
+    <div className="container mx-auto  pt-30 flex flex-col md:flex-row items-center md:justify-between">
       
       {/* Left Content */}
       <div className="w-full lg:w-1/2 flex flex-col gap-2 text-center md:text-left ">

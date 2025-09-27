@@ -1,13 +1,13 @@
 import React from "react";
 import top from "../../../../assets/jee-images/courses/top.png";
-import phone from "../../../../assets/jee-images/courses/vector.png";
+import phone from "../../../../assets/jee-images/courses/Vector.png";
 
 export default function ClassXIProgram() {
   return (
-    <div className="container mx-auto  pt-30 flex flex-col md:flex-row items-center md:justify-between">
+    <div className="container mx-auto pt-30 flex flex-col md:flex-row items-center md:justify-between">
       
       {/* Left Content */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-2 text-center md:text-left ">
+      <div className="w-full lg:w-1/2 flex flex-col gap-2 text-center md:text-left">
         <h3 className="text-xl sm:text-2xl font-bold">
           Crack the <span className="text-[#f1c618]">JEE Code</span> with
         </h3>
@@ -32,7 +32,7 @@ export default function ClassXIProgram() {
       </div>
 
       {/* Right Image */}
-      <div className="w-full lg:w-1/2 pt-5 flex justify-center">
+      <div className="w-full lg:w-1/2  pt-5 flex justify-center">
         <img src={top} alt="program" className="w-full max-w-md lg:max-w-xl object-contain" />
       </div>
     </div>
