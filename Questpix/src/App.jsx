@@ -13,6 +13,11 @@ import JeeContactUs from "./components/JEE/JeeContactUs";
 import JeeCareer from "./components/JEE/JeeCareer";
 import FreeMain from "./components/JEE/FreeResources/FreeMainPage";
 import WhyMain from "./components/JEE/WhyUs/WhyMainPage";
+// courses
+import ClassXIPage from "./components/JEE/Courses/ClassXI/ClassXIPage";
+import ClassXIIPage from "./components/JEE/Courses/ClassXII/ClassXIIPage";
+import ClassXIIPlusPage from "./components/JEE/Courses/ClassXIIPlus/ClassXIIPlusPage";
+import CrashCoursePage from "./components/JEE/Courses/CrashCourse/CrashCoursePage";
 
 import NeetWhoWeare from "./components/Neet/NeetWhoWeare";
 import NeetContactUs from "./components/Neet/NeetContactUs";
@@ -37,6 +42,7 @@ import HomeHeader from "./components/Home/HomeHeader";
 import JeeHeader from "./components/JEE/JeeHeader";
 import NeetHeader from "./components/Neet/NeetHeader";
 import SixToTenHeader from "./components/SixToTen/SixToTenHeader";
+
 
 function App() {
   const location = useLocation();
@@ -73,6 +79,10 @@ function App() {
         <Route path="/Jee/WhoWeare" element={<JeeWhoWeare />} />
         <Route path="/Jee/ContactUs" element={<JeeContactUs />} />
         <Route path="/Jee/Career" element={<JeeCareer />} />
+        <Route path="/Jee/Courses/ClassXI" element={<ClassXIPage />} />
+        <Route path="/Jee/Courses/ClassXII" element={<ClassXIIPage />} />
+        <Route path="/Jee/Courses/ClassXIIPlus" element={<ClassXIIPlusPage />} />
+        <Route path="/Jee/Courses/CrashCourse" element={<CrashCoursePage />} />
 
         <Route path="/Neet" element={<NeetPage />} />
         <Route path="/Neet/FreeResources" element={<NeetFreeMain />} />

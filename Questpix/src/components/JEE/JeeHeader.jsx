@@ -59,18 +59,30 @@ export default function JeeHeader() {
               Courses
             </button>
             {openMenu === "courses" && (
-              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
+              <div className="absolute top-10 left-0 mt-2 bg-[#1f2f45] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
-                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                  <li
+                    onClick={() => handleNavigate("/Jee/Courses/ClassXI")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
                     Class XI
                   </li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                  <li
+                    onClick={() => handleNavigate("/Jee/Courses/ClassXII")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
                     Class XII
                   </li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                  <li
+                    onClick={() => handleNavigate("/Jee/Courses/ClassXIIPlus")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
                     Class XII+
                   </li>
-                  <li className="hover:text-[#2fc18b] cursor-pointer">
+                  <li
+                    onClick={() => handleNavigate("/Jee/Courses/CrashCourse")}
+                    className="cursor-pointer hover:text-[#2fc18b]"
+                  >
                     Crash Course
                   </li>
                 </ul>
@@ -89,7 +101,7 @@ export default function JeeHeader() {
               Test Series
             </button>
             {openMenu === "test-series" && (
-              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-60 z-50">
+              <div className="absolute top-10 left-0 mt-2 bg-[#1f2f45] rounded-lg py-4 px-6 w-60 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
                   <li className="hover:text-[#2fc18b] cursor-pointer">
                     JEE Main Test Series
@@ -121,7 +133,7 @@ export default function JeeHeader() {
               Target Exam
             </button>
             {openMenu === "target-exam" && (
-              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
+              <div className="absolute top-10 left-0 mt-2 bg-[#1f2f45] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
                   <li className="hover:text-[#2fc18b] cursor-pointer">
                     JEE Main
@@ -145,7 +157,7 @@ export default function JeeHeader() {
               Study Material
             </button>
             {openMenu === "study-material" && (
-              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-64 z-50">
+              <div className="absolute top-10 left-0 mt-2 bg-[#1f2f45] rounded-lg py-4 px-6 w-64 z-50">
                 <ul className="space-y-4 text-[14px] cursor-pointer">
                   <li className="hover:text-[#2fc18b] cursor-pointer">
                     JEE Main Paper PDFs
@@ -195,7 +207,7 @@ export default function JeeHeader() {
               About Us
             </button>
             {openMenu === "about-us" && (
-              <div className="absolute top-10 left-0 mt-2 bg-[#1b2b3e] rounded-lg py-4 px-6 w-52 z-50">
+              <div className="absolute top-10 left-0 mt-2 bg-[#1f2f45] rounded-lg py-4 px-6 w-52 z-50">
                 <ul className="space-y-3 text-[14px] cursor-pointer">
                   <li
                     className="hover:text-[#2fc18b] cursor-pointer"
@@ -260,7 +272,7 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, handleNavigate }) {
         <div className="lg:hidden bg-[#0f1825] text-white px-4 py-4">
           <div className="max-w-[360px] mx-auto space-y-3 text-left">
             {/* Courses */}
-            <div className="bg-[#1b2b3e] rounded-xl shadow-md overflow-hidden">
+            <div className="bg-[#1f2f45] rounded-xl shadow-md overflow-hidden">
               <button
                 onClick={() => toggleMenu("courses")}
                 className="w-full flex justify-between items-center px-4 py-3 font-medium text-[16px]"
@@ -281,25 +293,25 @@ function MobileView({ mobileMenu, mobileOpen, setMobileOpen, handleNavigate }) {
               >
                 <ul className="px-6 py-2 space-y-2 text-sm border-t border-gray-700">
                   <li
-                    onClick={() => handleNavigate("/Jee/ClassXI")}
+                    onClick={() => handleNavigate("/Jee/Courses/ClassXI")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     Class XI
                   </li>
                   <li
-                    onClick={() => handleNavigate("/Jee/ClassXII")}
+                    onClick={() => handleNavigate("/Jee/Courses/ClassXII")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     Class XII
                   </li>
                   <li
-                    onClick={() => handleNavigate("/Jee/ClassXIIPlus")}
+                    onClick={() => handleNavigate("/Jee/Courses/ClassXIIPlus")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     Class XII+
                   </li>
                   <li
-                    onClick={() => handleNavigate("/Jee/CrashCourse")}
+                    onClick={() => handleNavigate("/Jee/Courses/CrashCourse")}
                     className="cursor-pointer hover:text-[#2fc18b]"
                   >
                     Crash Course
