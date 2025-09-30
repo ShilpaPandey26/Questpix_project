@@ -1,4 +1,4 @@
-// App.jsx
+
 import { Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import LandingPage from "./components/Landing/LandingPage";
@@ -36,6 +36,8 @@ import SixToTenContactUs from "./components/SixToTen/SixToTenContactUs";
 import SixToTenCareer from "./components/SixToTen/SixToTenCareer";
 import SixToTenFreeMain from "./components/SixToTen/FreeResources/SixToTenFreeMainPage";
 import SixToTenWhyMain from "./components/SixToTen/WhyUs/SixToTenWhyMainPage";
+
+import ClassSixPage from "./components/SixToTen/Courses/ClassSix/ClassSixPage";
 
 // login
 import Login from "./components/Login";
@@ -108,6 +110,7 @@ function App() {
         <Route path="/SixToTen/WhoWeare" element={<SixToTenWhoWeare />} />
         <Route path="/SixToTen/ContactUs" element={<SixToTenContactUs />} />
         <Route path="/SixToTen/Career" element={<SixToTenCareer />} />
+        <Route path="/SixToTen/Courses/Class6" element={<ClassSixPage />} />
       </Routes>
 
       {showFooter && <Footer />}
