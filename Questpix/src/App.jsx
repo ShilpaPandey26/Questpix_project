@@ -18,6 +18,9 @@ import ClassXIPage from "./components/JEE/Courses/ClassXI/ClassXIPage";
 import ClassXIIPage from "./components/JEE/Courses/ClassXII/ClassXIIPage";
 import ClassXIIPlusPage from "./components/JEE/Courses/ClassXIIPlus/ClassXIIPlusPage";
 import CrashCoursePage from "./components/JEE/Courses/CrashCourse/CrashCoursePage";
+//Target Exam
+import JeeMainPage from "./components/JEE/TargetExam/JeeMain/JeeMainPage";
+import JeeAdvancedPage from "./components/JEE/TargetExam/JeeAdvanced/JeeAdvancedPage";
 
 import NeetWhoWeare from "./components/Neet/NeetWhoWeare";
 import NeetContactUs from "./components/Neet/NeetContactUs";
@@ -29,6 +32,9 @@ import NeetClassXIPage from "./components/Neet/Courses/ClassXI/ClassXIPage";
 import NeetClassXIIPage from "./components/Neet/Courses/ClassXII/ClassXIIPage";
 import NeetClassXIIPlusPage from "./components/Neet/Courses/ClassXIIPlus/ClassXIIPlusPage";
 import NeetCrashCoursePage from "./components/Neet/Courses/CrashCourse/CrashCoursePage";
+//TargetExam
+import NeetUGPage from "./components/Neet/TargetExam/NeetUGPage";
+
 
 import SixToTenPage from "./components/SixToTen/SixToTenPage";
 import SixToTenWhoWeare from "./components/SixToTen/SixToTenWhoWeare";
@@ -49,6 +55,7 @@ import HomeHeader from "./components/Home/HomeHeader";
 import JeeHeader from "./components/JEE/JeeHeader";
 import NeetHeader from "./components/Neet/NeetHeader";
 import SixToTenHeader from "./components/SixToTen/SixToTenHeader";
+
 
 
 function App() {
@@ -90,6 +97,8 @@ function App() {
         <Route path="/Jee/Courses/ClassXII" element={<ClassXIIPage />} />
         <Route path="/Jee/Courses/ClassXIIPlus" element={<ClassXIIPlusPage />} />
         <Route path="/Jee/Courses/CrashCourse" element={<CrashCoursePage />} />
+        <Route path="/Jee/TargetExam/JeeMain" element={<JeeMainPage />} />
+        <Route path="/Jee/TargetExam/JeeAdvanced" element={<JeeAdvancedPage />} />
 
 
         <Route path="/Neet" element={<NeetPage />} />
@@ -103,6 +112,7 @@ function App() {
         <Route path="/Neet/Courses/ClassXII" element={<NeetClassXIIPage />} />
         <Route path="/Neet/Courses/ClassXIIPlus" element={<NeetClassXIIPlusPage />} />
         <Route path="/Neet/Courses/CrashCourse" element={<NeetCrashCoursePage />} />
+        <Route path="/Neet/TargetExam/NeetUG" element={<NeetUGPage />} />
 
         <Route path="/SixToTen" element={<SixToTenPage />} />
         <Route path="/SixToTen/FreeResources" element={<SixToTenFreeMain />} />
