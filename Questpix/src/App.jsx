@@ -22,6 +22,10 @@ import CrashCoursePage from "./components/JEE/Courses/CrashCourse/CrashCoursePag
 import JeeMainPage from "./components/JEE/TargetExam/JeeMain/JeeMainPage";
 import JeeAdvancedPage from "./components/JEE/TargetExam/JeeAdvanced/JeeAdvancedPage";
 
+//Test series
+import JeeMainTestSeriesPage from "./components/JEE/TestSeries/JeeMain/JeeMainTestSeriesPage";
+import JeeAdvancedTestSeriesPage from "./components/JEE/TestSeries/JeeAdvanced/JeeAdvancedTestSeriesPage";
+
 import NeetWhoWeare from "./components/Neet/NeetWhoWeare";
 import NeetContactUs from "./components/Neet/NeetContactUs";
 import NeetCareer from "./components/Neet/NeetCareer";
@@ -99,6 +103,8 @@ function App() {
         <Route path="/Jee/Courses/CrashCourse" element={<CrashCoursePage />} />
         <Route path="/Jee/TargetExam/JeeMain" element={<JeeMainPage />} />
         <Route path="/Jee/TargetExam/JeeAdvanced" element={<JeeAdvancedPage />} />
+        <Route path="/Jee/TestSeries/JeeMain" element={<JeeMainTestSeriesPage/>} />
+        <Route path="/Jee/TestSeries/JeeAdvanced" element={<JeeAdvancedTestSeriesPage/>} />
 
 
         <Route path="/Neet" element={<NeetPage />} />
