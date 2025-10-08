@@ -5,7 +5,7 @@ import TestimonialCarousel from './TestimonialCarousel'
 import JeeTestSeriesTestimonials from './JeeTestSeriesTestimonials'
 import Doubts from './Doubts'
 import FAQSection from './FAQSection'
-import TestSeriesPage from './TestSeriesPage'
+import TestSeries from './TestSeries'
 
 export default function JeeMainTestSeriesPage() {
   return (
@@ -17,7 +17,7 @@ export default function JeeMainTestSeriesPage() {
         <JeeTestSeriesTestimonials/>
         <Doubts/>
         <FAQSection/>
-        <TestSeriesPage/>
+        <TestSeries/>
       </div>
       </div>
   )

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Star, User } from "lucide-react";
+import maxresdefault from "../../../../assets/jee-images/TestSeries/maxresdefault.jpg"
 
 
 const advancedSeries = [
@@ -144,7 +145,7 @@ const TestSeriesCard = ({ series }) => (
     </div>
 );
 
-export default function TestSeriesPage  () {
+export default function TestSeries  () {
 
     const [playVideo, setPlayVideo] = useState(false);
     const videoRef = useRef(null);
@@ -159,7 +160,7 @@ export default function TestSeriesPage  () {
 
     return (
         <div className="container text-white pt-14">
-            {/* Header */}
+           
             <div className="text-center py-12 px-4">
                 <h1 className="text-4xl  font-bold">
                     Questpix Top Rated <span className="text-[#2fc18b]">Test Series</span>
@@ -173,7 +174,7 @@ export default function TestSeriesPage  () {
                 </p>
             </div>
 
-            {/* Advanced Section */}
+           
             <section className="max-w-4xl mx-auto px-4 mb-10">
                 {/* <h2 className="text-3xl font-semibold mb-8 text-center">Advanced Series</h2> */}
                 <div className="grid md:grid-cols-2 gap-8">
@@ -183,7 +184,7 @@ export default function TestSeriesPage  () {
                 </div>
             </section>
 
-            {/* Main Section */}
+          
             <section className="max-w-4xl mx-auto px-4 mb-10">
                 {/* <h2 className="text-3xl font-semibold mb-8 text-center">Main Test Series</h2> */}
                 <div className="grid md:grid-cols-2 gap-8">
@@ -193,19 +194,20 @@ export default function TestSeriesPage  () {
                 </div>
             </section>
 
-            {/* Video Section */}
-            <div className=" w-full flex justify-center">
+            {/* Video */}
+           <div className=" w-full flex  flex-col justify-center items-center">
+                <h2 className="text-2xl sm:text-4xl font-extrabold mb-10 mt-10">Why Test Series is <span className="text-[#2fc18b]">Important?</span></h2>
                 {!playVideo ? (
                     <div className="cursor-pointer" onClick={handlePlay}>
                         <img
-                            src="https://i.ytimg.com/vi/ekLlzQgV0e4/maxresdefault.jpg"
+                            src={maxresdefault}
                             alt="Video Thumbnail"
                             className="w-full h-auto max-w-[600px] object-cover rounded-lg shadow-lg"
                         />
                     </div>
                 ) : (
                     <video
-                        className="w-full h-auto max-w-[500px] rounded-lg shadow-lg"
+                        className="w-full h-auto max-w-[600px] rounded-lg shadow-lg"
                         ref={videoRef}
                         controls
                     >
