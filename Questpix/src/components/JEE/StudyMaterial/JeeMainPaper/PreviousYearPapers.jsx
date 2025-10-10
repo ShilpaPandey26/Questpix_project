@@ -2,26 +2,28 @@ import React from "react";
 import pdf from "../../../../assets/jee-images/StudyMaterial/pdf.png";
 
 const papers = [
-    "JEE Main 2024 (09 April, Shift 2)",
-    "JEE Main 2024 (09 April, Shift 1)",
-    "JEE Main 2024 (08 April, Shift 2)",
-    "JEE Main 2024 (08 April, Shift 1)",
-    "JEE Main 2024 (06 April, Shift 2)",
-    "JEE Main 2024 (06 April, Shift 1)",
-    "JEE Main 2024 (05 April, Shift 2)",
-    "JEE Main 2024 (05 April, Shift 1)",
-    "JEE Main 2024 (04 April, Shift 2)",
-    "JEE Main 2024 (31 Jan, Shift 2)",
-    "JEE Main 2024 (31 Jan, Shift 1)",
-    "JEE Main 2024 (30 Jan, Shift 2)",
-    "JEE Main 2024 (30 Jan, Shift 1)",
-    "JEE Main 2024 (29 Jan, Shift 2)",
-    "JEE Main 2024 (29 Jan, Shift 1)",
-    "JEE Main 2024 (27 Jan, Shift 2)",
-    "JEE Main 2024 (27 Jan, Shift 1)",
-    "JEE Main 2024 (01 Feb, Shift 2)",
-    "JEE Main 2024 (01 Feb, Shift 1)",
+  { title: "JEE Main 2024 (09 April, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282403.pdf" },
+  { title: "JEE Main 2024 (09 April, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282391.pdf" },
+  { title: "JEE Main 2024 (08 April, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282378.pdf" },
+  { title: "JEE Main 2024 (08 April, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282366.pdf" },
+  { title: "JEE Main 2024 (06 April, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282351.pdf" },
+  { title: "JEE Main 2024 (06 April, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282337.pdf" },
+  { title: "JEE Main 2024 (05 April, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282324.pdf" },
+  { title: "JEE Main 2024 (05 April, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282310.pdf" },
+  { title: "JEE Main 2024 (04 April, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282261.pdf" },
+  { title: "JEE Main 2024 (04 April, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739282247.pdf" },
+  { title: "JEE Main 2024 (31 Jan, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280722.pdf" },
+  { title: "JEE Main 2024 (31 Jan, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280604.pdf" },
+  { title: "JEE Main 2024 (30 Jan, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280591.pdf" },
+  { title: "JEE Main 2024 (30 Jan, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280575.pdf" },
+  { title: "JEE Main 2024 (29 Jan, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280560.pdf" },
+  { title: "JEE Main 2024 (29 Jan, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280543.pdf" },
+  { title: "JEE Main 2024 (27 Jan, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280529.pdf" },
+  { title: "JEE Main 2024 (27 Jan, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280513.pdf" },
+  { title: "JEE Main 2024 (01 Feb, Shift 2)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280495.pdf" },
+  { title: "JEE Main 2024 (01 Feb, Shift 1)", link: "https://questpix.nyc3.cdn.digitaloceanspaces.com/uploads/study_material/1739280481.pdf" },
 ];
+
 
 export default function PreviousYearPapers() {
     return (
@@ -45,13 +47,13 @@ export default function PreviousYearPapers() {
                                 key={index}
                                 className="border-b border-gray-700 hover:bg-gray-800 transition"
                             >
-                                <td className="py-3 px-4 text-sm sm:text-[15px]  w-[60%]">
-                                    {paper} Previous Year Paper
+                                <td className="py-3 px-4 text-xs sm:text-[15px]  w-[60%]">
+                                    {paper.title} Previous Year Paper
                                 </td>
                                 <td className="py-3 px-4 text-center  w-[40%]">
                                     <a
-                                        href="#"
-                                        className="flex items-center text-sm sm:text-[15px] justify-center gap-2 text-[#00D0FF] hover:text-blue-300"
+                                        href={paper.link}
+                                        className="flex items-center text-xs sm:text-[15px] justify-center gap-2 text-[#00D0FF] hover:text-blue-300"
                                     >
                                         <img src={pdf} className="w-5 h-5 text-red-500" />
                                         Download PDF
