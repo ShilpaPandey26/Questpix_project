@@ -7,7 +7,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full fixed top-0 left-0 bg-[#0f1825] z-[1000] ">
+    <div className="w-full fixed top-0 left-0 bg-[#0f1825] z-[100] ">
       <div className="max-w-[1300px] mx-auto  flex justify-between items-center px-4 sm:px-5 lg:px-4 py-2 sm:py-4">
         {/* Logo */}
         <div>
