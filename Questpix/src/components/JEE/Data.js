@@ -196,7 +196,7 @@ const Data = [
                 description: "Don't just get the answer — understand the concepts behind it with detailed explanations."
             }
         ],
-        image: "https://questpix.com/assets/images/jee_landing/doubt.png",
+        image: "https://questpix.com/assets/images/jee_landing/",
         video: "",
         imageWidth: "300px",
         videoWidth: "500px",

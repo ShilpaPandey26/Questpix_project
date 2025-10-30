@@ -57,7 +57,7 @@ export default function ConnectSection() {
             Organisation's Competitive Edge?
           </span>
         </h2>
-        <p className="text-lg md:text-[20px]">
+        <p>
           Partner with QuestPix to transform student outcomes and boost your
           institution's reputation.
         </p>
@@ -199,8 +199,7 @@ export default function ConnectSection() {
                   } focus:border-[#2FC18B]`}
                 >
                   <option>Select State</option>
-                  <option>Maharashtra</option>
-                  <option>Delhi</option>
+                  <option>Maharashtra</option>                 
                 </select>
                 {errors.state && (
                   <p className="text-red-600 text-sm">{errors.state}</p>
